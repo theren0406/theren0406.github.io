@@ -139,7 +139,7 @@
 			height: 45px;
 			opacity: 0.6;
 		}
-		#resume {
+		#nextPage {
 			display: block;
             position: absolute;
 			width: 170px;
@@ -151,10 +151,10 @@
 			opacity: 0;
 		}
     
-        #resume:hover  .arrow {
+        #nextPage:hover  .arrow {
             transform: scaleY(0);
         }
-        #resume:hover  #text {
+        #nextPage:hover  #text {
             transform: scaleY(1);
         }
         #spin{

@@ -44,8 +44,8 @@
             	for (var i = 0; i < frames.length; i++) {
             		frames[i].style.opacity = 0.9;
             	}
-            	var resume = document.querySelector("#resume");            	 
-            	resume.style.animation = "arrowfadeIn 4s linear 1s forwards";
+            	var next = document.querySelector("#nextPage");            	 
+            	next.style.animation = "arrowfadeIn 4s linear 1s forwards";
             }
         }
         function highlight(){
