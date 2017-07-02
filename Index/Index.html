@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+	<style>
+	    @keyframes fadeIn {
+			0% {
+				opacity:0;
+			}
+			100% {
+				opacity:1;
+			}
+		}
+		@keyframes arrowfadeIn {
+			0% {
+				opacity:0;
+			}
+			50% {
+				opacity:1;
+			}
+			100% {
+				opacity:0.8;
+			}
+		}
+		@keyframes FallDown {
+			0% {
+				transform: translate(0, -800px);
+			}
+			60% {
+				transform: translate(0, 30px);
+			}
+			85% {
+				transform: translate(0, -10px);
+			}
+			100% {
+				opacity: 1;
+				transform: none;
+			}
+		}
+		@keyframes Flash {
+			0% {
+				opacity: 1;
+			}
+			50%{
+				opacity: 0.5;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		body{
+			min-width: 640px;
+			overflow: hidden;
+			font-family: "Microsoft JhengHei";
+		}
+		body,div,p {
+			margin: 0;
+		}	
+		a {
+			text-decoration: none;
+			display: inline-block;
+			opacity: 0.6;
+		}
+		.page {
+			width: 100%;
+			height: 900px;
+			background-image: url("background.jpg");
+			background-size: 100% 850px;
+			animation: fadeIn 2s linear;
+			position: relative;
+		}
+		.star {
+			width: 50px;
+			height: 45px;
+			opacity: 0;
+			position: absolute;
+			animation: FallDown 2s linear 1s forwards, Flash 2s linear 3s infinite;
+		}
+		.star_in {			
+			position: static;
+			animation: Flash 2s linear infinite;
+		}
+		#star1 {
+			left: 90%;
+			top: 5%;
+		}
+		#star2 {
+			left: 80%;
+			top: 25%;
+		}
+		#star3 {
+			left: 60%;
+			top: 20%;
+		}
+		#star4 {
+			left: 30%;
+			top: 15%;
+		}
+		#star5 {
+			left: 20%;
+			top: 30%;
+			z-index: 1;
+		}
+		#star6 {
+			left: 5%;
+			top: 5%;
+		}
+		.intro {
+			color:white;			
+			position: absolute;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+			top:30%;
+			text-align: center;
+		}
+		.intro p {
+			margin:20px 0;
+			opacity: 0.6;
+			font-size: 18px;
+		}
+		.intro a {
+			color:white;
+			margin: 25px 0;
+			padding: 10px;
+			font-size: 30px;
+			border: 3px solid white;
+			border-radius: 3px;		
+		}
+		.intro a:hover {
+			opacity: 0.8;
+		}
+		#explain {
+			opacity: 0.8;
+		}
+		.frame {
+
+		}
+		.frame span {
+			background-image: url(outerStar.png);
+			display: inline-block;
+			width: 50px;
+			height: 45px;
+			opacity: 0.6;
+		}
+		#resume {
+			display: block;
+            position: absolute;
+			width: 170px;
+			height: 30px;
+			right: 20px;
+			bottom: 160px;
+			font-size: 20px;
+			animation: none;
+			opacity: 0;
+		}
+    
+        #resume:hover  .arrow {
+            transform: scaleY(0);
+        }
+        #resume:hover  #text {
+            transform: scaleY(1);
+        }
+        #spin{
+            position: absolute;
+            width: 90px;
+            height: 18px;
+            left: 40px;
+            border: 1px solid white;
+            border-radius: 3px;
+            background-color: white;            
+            transform: scaleY(1);
+            transition: transform 1s; 
+            z-index: 1;           
+        }
+        #triangle { 
+        	position: absolute;
+        	top:-13px;
+        	left: 120px;     
+        	width: 0; 
+        	height: 0; 
+        	border-top: 23px solid transparent;
+        	border-bottom: 23px solid transparent; 
+        	border-left: 23px solid white; 
+        	transform: scaleY(1);
+        	transition: transform 1s;
+        }
+        #text {
+        	position: absolute;
+        	top:-15px;
+        	line-height: 30px;
+        	font-size: 20px;
+        	color: white/*#fcec93*/; 
+        	transform: scaleY(0);
+        	transition: transform 1s;
+        }
+
+	</style>
+	<script>
+	    var count = 0; // how many times did user drop star
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+
+            // only frames without star are droppable 
+            var frames = document.querySelectorAll(".frame > span");
+            	for (var i = 0; i < frames.length; i++) {
+            		if(frames[i].childNodes[0] == null){
+            			frames[i].ondragover = allowDrop;
+            		}        		
+            	}
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var star = document.getElementById(data);
+            star.classList.remove("star");
+            star.classList.add("star_in");  
+
+            // add star in frame, then set target frame as undroppable     
+            ev.target.appendChild(star);
+            ev.target.ondragover = null;
+            count++;
+
+            if (count >= 6){
+            	var frames = document.querySelectorAll(".frame > span");
+
+            	//check if all frames are with star
+            	for (var i = 0; i < frames.length; i++) {
+            		if(frames[i].childNodes[0] == null){  
+            			return;        			
+            		}        		
+            	}
+            
+            	//stars & frames light up
+            	var stars = document.querySelectorAll(".star_in");       	
+            	for (var i = 0; i < stars.length; i++) {
+            	stars[i].classList.remove("star_in");
+                }        	
+            	var frames = document.querySelectorAll(".frame > span");
+            	for (var i = 0; i < frames.length; i++) {
+            		frames[i].style.opacity = 0.9;
+            	}
+            	var resume = document.querySelector("#resume");            	 
+            	resume.style.animation = "arrowfadeIn 4s linear 1s forwards";
+            }
+        }
+        function highlight(){
+            var exp = document.querySelector("#explain");
+            var opa = 0;
+            var id = setInterval(frame, 100);
+            function frame() {
+                if (opa == 0.6) {
+                    clearInterval(id);
+                } else {
+                    opa += 0.1;
+                    exp.style.opacity = opa;
+                }
+            }
+        }
+
+        window.onload = function () {
+            var stars = document.querySelectorAll(".star");
+            for (var i = 0; i < stars.length; i++) {
+            	stars[i].draggable = true;
+            	stars[i].ondragstart = drag;
+            }
+            var frames = document.querySelectorAll(".frame > span");
+            for (var i = 0; i < frames.length; i++) {
+            	frames[i].ondrop = drop;
+            	frames[i].ondragover = allowDrop;
+            }
+            document.querySelector("#name").onclick = highlight;
+        }
+    </script>
+</head>
+<body>
+	<div class="page">
+	    <img class="star" id="star1" src="innerStar.png">
+		<img class="star" id="star2" src="innerStar.png">
+		<img class="star" id="star3" src="innerStar.png">
+		<img class="star" id="star4" src="innerStar.png">
+		<img class="star" id="star5" src="innerStar.png">
+		<img class="star" id="star6" src="innerStar.png">
+		<div class="intro">
+			<a id="name" href="/">Yun-Fan Chen</a>
+			<p>This Page is for the interview of Front-End Developer</p>
+			<p>Please drag stars into the frame below then go to Resume Page</p>
+			<p id="explain">請將星星放入下方框框內，完成後進入"下一頁"</p>
+
+			<div class="frame" >
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>	
+		<a href="http://www.youtube.com" id="resume">
+			<div id="spin" class="arrow"></div>
+			<div id="text"><b>go to myPage</b></div>
+			<div id="triangle" class="arrow"></div>
+		</a>
+	</div>		
+</body>
+</html>
