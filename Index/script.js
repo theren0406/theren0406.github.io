@@ -48,7 +48,8 @@
             	next.style.animation = "arrowfadeIn 4s linear 1s forwards";
             }
         }
-        function highlight(){
+        function highlight(ev){
+            ev.preventDefault();
             var exp = document.querySelector("#explain");
             var opa = 0;
             var id = setInterval(frame, 100);

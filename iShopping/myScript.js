@@ -25,7 +25,7 @@ var paused = false;
                     $(".like").css('display','none');
                 }
             });
-            $(".goods").click(function(){
+            $("#box1 .goods").click(function(){
                 $(".active").removeClass("active");
                 var index = $(this).children().attr("alt");
                 $(".photolist img[alt="+index+"]").addClass("active");
