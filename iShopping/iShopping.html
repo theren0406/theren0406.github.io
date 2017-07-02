@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>iShopping</title>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="header.css">
     <style>
         @keyframes mymove {
             0% {background-position: -10% 0%;}
@@ -32,120 +33,6 @@
         }
         a {
             text-decoration: none;
-        }
-        header {
-            height: 100px;
-            border-bottom: 1px dashed lightgray;
-        }
-        .logo{
-            display: block;
-            float: left;
-            width: 200px;
-            height: 100px;
-        }
-        header > ul {
-            display: inline-block;
-            font-size: 16px;
-        }
-        .menu {
-            float: left;
-            width: 100px;
-            height: 100px;   
-            text-align: center;
-            border-right: 1px dashed lightgray;   
-            background: unset;   
-            position: relative; 
-        }
-        .menu:hover {
-            background: #f9f9f9; /* For browsers that do not support gradients */    
-            background: -moz-linear-gradient(bottom right, #f9f9f9, #e9e9e9); /* For Firefox 3.6 to 15 */
-            background: linear-gradient(to bottom right, #f9f9f9, #e9e9e9); /* Standard syntax (must be last) */           
-        }       
-        .menu a {
-            display: block;
-            padding-top: 12px;
-            color: rgb(68, 68, 68);
-        }
-        .menu b {
-            background-image: url("heart.png");
-            display: none;
-            width: 20px;
-            height: 19px;
-            position: absolute;
-            left: 40px;
-            bottom: -10px;
-            z-index: 2;
-        }
-        .menu:first-child {
-            border-left: 1px dashed lightgray;
-        }
-        .submenu {
-            width: 240px;
-            font-size: 14px;
-            text-align: left;
-            padding: 10px;
-            border: 5px solid #f2f2f2;
-            background-color: white;
-            display: none;
-            position: relative;
-            z-index: 1;
-        }
-        .submenu a {
-            padding: 5px 10px;
-            letter-spacing: 2px;   
-        }
-        .submenu a:hover {
-            color: white;
-            background-color: rgb(68, 68, 68);
-        }
-
-        .searchdiv {
-            font-size: 14px;
-            float: right;
-            margin-top: 12px;
-        }
-        .total {            
-            color: rgb(85, 85, 85)
-        }
-        .total b {
-            color: rgb(187, 187, 187);
-            font-size: 28px;
-            margin-right: 10px;
-        }
-        .login {
-            color: rgb(38, 141, 223);
-            float: right;
-            margin-top: 10px;
-        }
-        .login:hover {
-            text-decoration: underline;
-        }
-        .search {
-            padding-top: 5px; 
-        }
-        .search input{         
-            font-size: 15px;          
-        }
-        .search #key {
-            border: 3px solid rgb(226, 226, 226);
-            width: 220px;
-            padding: 5px;
-            color: rgb(119, 119, 119);
-        }
-        .search #key:focus {
-            color: rgb(51, 51, 51);
-        }
-        .search #submit {
-            width: 65px;
-            height: 33px;
-            background-color: rgb(68, 68, 68);
-            color: white;
-            border: 0;
-            border-radius: 3px;
-            margin-left: 3px;
-        }
-        .search #submit:hover {
-            background-color: #3d89c8;
         }
 
         .title {
@@ -473,11 +360,11 @@
             height: 28px;
             display: none;
             position: absolute;
-            background-image: url("whiteheart.png");
+            background-image: url("img/whiteheart.png");
         }
         .like:hover {
             display: block;
-            background-image: url("pinkheart.png");
+            background-image: url("img/pinkheart.png");
         }
         .modal {
             background-color: rgba(0,0,0,.5);
@@ -543,7 +430,7 @@
             border-radius: 0 0 5px 5px;
         }
         .modal-close {
-            background-image: url("close.png");
+            background-image: url("img/close.png");
             width: 32px;
             height: 32px;
             cursor: pointer;
@@ -642,136 +529,14 @@
         }
     </style>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script>
-        var paused = false;
-
-        $(document).ready(function(){
-            $(".menu").mouseenter(function(){
-                $(this).children("ul").slideDown("fast");
-                $(this).children("b").css("display","block");
-            });
-            $(".menu").mouseleave(function(){
-                $(this).children("ul").slideUp("fast");
-                $(this).children("b").css("display","none");
-            });
-            $(".menu a").click(function(e){
-                e.preventDefault();
-                $('html, body').stop().animate({ scrollTop: $($(this).attr('href')).offset().top}, 300, 'linear');
-            });
-
-            $(".goods").mouseenter(function(e){
-                e = e.target.getBoundingClientRect();
-                var l = e.right - 35;  //-7-28 (element's width
-                var t = $(this).offset().top + 10;
-                $(".like").css({'left':l,'top':t,'display':'block'});
-            });
-            $(".goods").mouseleave(function(e){
-                if(e.relatedTarget !== $(".like")[0]){
-                    $(".like").css('display','none');
-                }
-            });
-            $(".goods").click(function(){
-                $(".active").removeClass("active");
-                var index = $(this).children().attr("alt");
-                $(".photolist img[alt="+index+"]").addClass("active");
-                $(".photolist").css("left", index.substring(5) * -190 -190);
-                $(".photopop").fadeIn();
-                $("body").css("overflow","hidden");
-            });
-
-            $("nav a").click(function(e){
-                $("nav").toggleClass("gradient");
-                e.preventDefault();
-            });
-
-            $(".login, .like").click(function(){
-                $(".loginpop").fadeIn();
-                $("body").css("overflow","hidden");
-            });
-            function modalClose(){
-                $(".modal").fadeOut();
-                $("body").css("overflow","visible");
-            }
-            $(".modal-close").click(function(){
-                modalClose();
-            });
-            $(window).click(function(e){
-                if (e.target == $(".modal")[0]|| e.target == $(".modal")[1]) {
-                    modalClose();
-                } 
-            });
-            $(".modal-login input").focus(function() {
-                $(".modal-login i").css( "color", "rgb(226,226,226)");
-                $(this).siblings("i").css( "color", "rgb(243,134,171)");
-            });
-         
-            $(".prev").click(function(){
-                
-                if($(".photolist").css("left") == "-190px"){                   
-                    $(".photolist img:eq(10)").addClass("stop active");               
-                    $(".active").first().addClass("stop").removeClass("active");
-                    $(".photolist").css("left", "-1710px"); 
-                }
-                $(".photolist").animate({left: "+=190"}, "500" );
-                $(".active").prev().addClass("active");
-                $(".active").last().removeClass("stop active");  
-            }); 
-
-            $(".next").click(function(){ 
-
-                if($(".photolist").css("left") == "-1520px"){
-                    $(".photolist").css("left", "0px");                 
-                    $(".photolist img:eq(1)").addClass(" active");
-                    $(".active").last().removeClass("active");       
-                }           
-                $(".photolist").animate({left: "-=190"}, "500" );
-                $(".active").next().addClass("active");
-                $(".active").first().removeClass(" active");                            
-            });
-
-            $(".appbox > a > img").mouseenter(function(){
-                paused = true;
-            });
-             $(".appbox > a > img").mouseleave(function(){
-                paused = false;
-            });
-            setInterval(function(){ 
-                if(!paused) {
-                appTimer(); discountTimer(); }
-            }, 5000);
-
-        });
-        
-        function appTimer(){      
-            $(".appbox > a").children().each(function() {
-                if ($(this).css('display') ==  "none") {
-                    $( this ).fadeIn("slow");
-                } else {
-                   $( this ).fadeOut("slow");
-                }
-            });    
-        }
-
-        function discountTimer(){
-            var on = $(".discount > a").children().filter(function() {
-                return $(this).css('display') == 'inline';
-            });
-            on.fadeOut("slow");
-
-            if (on.parent().is( ":last-child" )){
-                $(".discount > a:first").children().fadeIn("slow");
-            } else {
-                on.parent().next().children().fadeIn("slow");
-            }
-        }
-    </script>
+    <script src="myScript.js"></script>
 </head>
 <body>
     <header>
-        <a class="logo" href="/"><img src="logo.png" alt="logo_icon"></a>
+        <a class="logo" href="/"><img src="img/logo.png" alt="logo_icon"></a>
         <ul>
             <li class="menu">
-                <a href="#box1">買設計<img src="nav1.png" alt="icon"></a>
+                <a href="#box1">買設計<img src="img/nav1.png" alt="icon"></a>
                 <ul class="submenu">
                     <li><a href="">所有商品分類</a></li>
                     <li><a href="">免運專區</a></li>
@@ -781,11 +546,11 @@
                 <b></b>
             </li>
             <li class="menu">
-                <a href="#box2">找靈感<img src="nav2.png" alt="icon"></a>
+                <a href="#box2">找靈感<img src="img/nav2.png" alt="icon"></a>
                 <b></b>
             </li>
             <li class="menu">
-                <a href="#box3">逛櫥窗<img src="nav3.png" alt="icon"></a>
+                <a href="#box3">逛櫥窗<img src="img/nav3.png" alt="icon"></a>
                 <ul class="submenu">
                     <li><a href="">商品櫥窗</a></li>
                     <li><a href="">拼貼我的櫥窗</a></li>
@@ -793,7 +558,7 @@
                 <b></b>
             </li>
             <li class="menu">
-                <a href="#box4">讀設計<img src="nav4.png" alt="icon"></a>
+                <a href="#box4">讀設計<img src="img/nav4.png" alt="icon"></a>
                 <ul class="submenu">
                     <li><a href="">設計誌</a></li>
                     <li><a href="">設計師教練場</a></li>
@@ -816,24 +581,24 @@
             <h3 class="title">人氣推薦<span class="subtitle">快來看看今日最受網友推薦、好評不斷的商品，喜歡就趕快帶回家吧！</span>
             </h3>             
             <div id="size1">
-                <a class="goods" href=#><img src="hot/0.jpg" alt="photo0"></a><a class="goods" href="#"><img src="hot/1.jpg" alt="photo1"></a><a class="goods" href="#"><img src="hot/2.jpg" alt="photo2"></a>
+                <a class="goods" href=#><img src="img/hot/0.jpg" alt="photo0"></a><a class="goods" href="#"><img src="img/hot/1.jpg" alt="photo1"></a><a class="goods" href="#"><img src="img/hot/2.jpg" alt="photo2"></a>
             </div>
             <div id="size2">
-                <a class="goods" href="#"><img src="hot/3.jpg" alt="photo3"></a><a class="goods" href="#"><img src="hot/4.jpg" alt="photo4"></a><a class="goods" href="#"><img src="hot/5.jpg" alt="photo5"></a>
+                <a class="goods" href="#"><img src="img/hot/3.jpg" alt="photo3"></a><a class="goods" href="#"><img src="img/hot/4.jpg" alt="photo4"></a><a class="goods" href="#"><img src="img/hot/5.jpg" alt="photo5"></a>
                 <div id="size3">
-                    <a class="goods" id="size3-1" href="#"><img src="hot/6.jpg" alt="photo6"></a><a class="goods" href="#"><img src="hot/7.jpg" alt="photo7"></a>
+                    <a class="goods" id="size3-1" href="#"><img src="img/hot/6.jpg" alt="photo6"></a><a class="goods" href="#"><img src="img/hot/7.jpg" alt="photo7"></a>
                 </div>
             </div>             
         </div>
         <div class="appbox AD rightbox">
-            <a href="/24hr"><img src="may.jpg" alt="24hr"></a>
-            <a href="/app"><img src="app.jpg" alt="appDownLoad"></a>
+            <a href="/24hr"><img src="img/may.jpg" alt="24hr"></a>
+            <a href="/app"><img src="img/app.jpg" alt="appDownLoad"></a>
         </div>
         <div class="modal photopop">          
             <div class="modal-photo">
                 <div class="prev button"><i class="fa fa-arrow-circle-left fa-3x"></i></div>
                 <div class="photolist">
-                    <span></span><img class="item" src="hot/500x6.jpg"><img class="item" src="hot/500x7.jpg"><img class="item" src="hot/500x0.jpg" alt="photo0"><img class="item" src="hot/500x1.jpg" alt="photo1"><img class="item" src="hot/500x2.jpg" alt="photo2"><img class="item" src="hot/500x3.jpg" alt="photo3"><img class="item" src="hot/500x4.jpg" alt="photo4"><img class="item" src="hot/500x5.jpg" alt="photo5"><img class="item" src="hot/500x6.jpg" alt="photo6"><img class="item" src="hot/500x7.jpg" alt="photo7"><img class="item" src="hot/500x0.jpg"><img class="item" src="hot/500x1.jpg">
+                    <span></span><img class="item" src="img/hot/500x6.jpg"><img class="item" src="img/hot/500x7.jpg"><img class="item" src="img/hot/500x0.jpg" alt="photo0"><img class="item" src="img/hot/500x1.jpg" alt="photo1"><img class="item" src="img/hot/500x2.jpg" alt="photo2"><img class="item" src="img/hot/500x3.jpg" alt="photo3"><img class="item" src="img/hot/500x4.jpg" alt="photo4"><img class="item" src="img/hot/500x5.jpg" alt="photo5"><img class="item" src="img/hot/500x6.jpg" alt="photo6"><img class="item" src="img/hot/500x7.jpg" alt="photo7"><img class="item" src="img/hot/500x0.jpg"><img class="item" src="img/hot/500x1.jpg">
                 </div>
                 <div class="next button"><i class="fa fa-arrow-circle-right fa-3x"></i></div>
             </div>
@@ -854,18 +619,18 @@
         <div class="newbox leftbox">
             <h3 class="title">新品推薦</h3>
             <div id="size4">
-                <a class="goods" href="#"><img src="new/0.jpg" alt="item0"></a><a class="goods" href="#"><img src="new/1.jpg" alt="item1"></a><a class="goods" href="#"><img src="new/2.jpg" alt="item2"></a><a class="goods" href="#"><img src="new/3.jpg" alt="item3"></a><a class="goods" href="#"><img src="new/4.jpg" alt="item4"></a><a class="goods" href="#"><img src="new/5.jpg" alt="item5"></a><a class="goods" href="#"><img src="new/6.jpg" alt="item6"></a><a class="goods" href="#"><img src="new/7.jpg" alt="item7"></a>
+                <a class="goods" href="#"><img src="img/new/0.jpg" alt="item0"></a><a class="goods" href="#"><img src="img/new/1.jpg" alt="item1"></a><a class="goods" href="#"><img src="img/new/2.jpg" alt="item2"></a><a class="goods" href="#"><img src="img/new/3.jpg" alt="item3"></a><a class="goods" href="#"><img src="img/new/4.jpg" alt="item4"></a><a class="goods" href="#"><img src="img/new/5.jpg" alt="item5"></a><a class="goods" href="#"><img src="img/new/6.jpg" alt="item6"></a><a class="goods" href="#"><img src="img/new/7.jpg" alt="item7"></a>
             </div>
         </div>
         <div class="freebox rightbox">
             <div class="freeship box">
-                <a href="#"><img src="free.png" alt="FreeShipping"></a>
+                <a href="#"><img src="img/free.png" alt="FreeShipping"></a>
             </div>
             <div class="discount AD">
-                <a href="#"><img style="display:inline;" src="discount/5off.png" alt="discount5off"></a>
-                <a href="#"><img style="display:none;" src="discount/10off.png" alt="discount10off"></a>
-                <a href="#"><img style="display:none;" src="discount/15off.png" alt="discount15off"></a>
-                <a href="#"><img style="display:none;" src="discount/25off.png" alt="discount25off"></a>
+                <a href="#"><img style="display:inline;" src="img/discount/5off.png" alt="discount5off"></a>
+                <a href="#"><img style="display:none;" src="img/discount/10off.png" alt="discount10off"></a>
+                <a href="#"><img style="display:none;" src="img/discount/15off.png" alt="discount15off"></a>
+                <a href="#"><img style="display:none;" src="img/discount/25off.png" alt="discount25off"></a>
             </div>
         </div>
     </div>
@@ -874,19 +639,19 @@
             <h3 class="title">編輯嚴選文章</h3>
             <div class="category">
                 <h4><a href="#">Pinkoi 大聲公</a></h4>
-                <a class="size5 center" href="" style="background-image: url('blog/3.jpg')"></a>
+                <a class="size5 center" href="" style="background-image: url('img/blog/3.jpg')"></a>
                 <a class="blogtitle" href="">城市漫遊：公館的 5 個秘密基地</a>
                 <p>位於台北市南區，公館是一塊長期被各種美麗文化澆灌的寶地。這裏有人文薈萃的台大校園、廣邀藝術家駐村創作的寶藏巖、各種二手書店、Live House 與五花八門的異國料理。不過，貪玩的小編想給大家推薦一些特別的～（摩拳擦掌）跟上步伐，今天就帶大家去參觀公館的</p>
             </div>
             <div class="category">
                 <h4><a href="#">Pinkoi 大聲公</a></h4>
-                <a class="size5 center" href="" style="background-image: url('blog/0.jpg')"></a>
+                <a class="size5 center" href="" style="background-image: url('img/blog/0.jpg')"></a>
                 <a class="blogtitle" href="https://www.pinkoi.com/magz/krmX6YTZ">目青的人生選物店：「做一杯溫開水，拍有溫度的照片。」</a>
                 <p>以影像佐詩，攝影師目青的影像泛著藍天與草地的清透色彩。徘徊在不具名的小弄，也佇立於孤高的頂端，他以極簡的構圖框住過路人的身影，留下霎那的靜美，也訴說一種恬淡、溫柔的生活哲學。「好緊張啊！」或許習慣藏身鏡頭後了，目青放下沈甸甸的相機包，邊看著訪綱，邊輕聲</p>
             </div>         
             <div class="category edge">
                 <h4><a href="#">五月，恣在旅行</a></h4>
-                <a class="size5 center" href="" style="background-image: url('blog/1.jpg')"></a>
+                <a class="size5 center" href="" style="background-image: url('img/blog/1.jpg')"></a>
                 <a class="blogtitle" href="">Pinkoi 私物招領：我最愛的私房景點</a>
                 <p>厭倦了大家都去過的熱門景點，但心中的旅遊魂仍然蠢蠢欲動嗎？生活中的每一個角落都可能藏著不經意的驚喜：頂樓的小木屋、巷尾被遺忘的花園、繞路而意外發現的林蔭小道⋯⋯。每個人都有一個最愛的私房景點，透過鏡頭將這些地方記錄下來，也是生活中的小浪漫。這週 Pi</p>
             </div>
@@ -894,15 +659,15 @@
         <div class="markedbox rightbox">
             <h3 class="title">剛被收藏的設計品</h3>
             <div class="leftline">
-                <a href=""><img src="mark/0.jpg" alt="mark0"></a>
-                <a href=""><img src="mark/1.jpg" alt="mark1"></a>
-                <a href=""><img src="mark/2.jpg" alt="mark2"></a>
+                <a href=""><img src="img/mark/0.jpg" alt="mark0"></a>
+                <a href=""><img src="img/mark/1.jpg" alt="mark1"></a>
+                <a href=""><img src="img/mark/2.jpg" alt="mark2"></a>
             </div>
             <div class="rightline">
-                <a href=""><img src="mark/3.jpg" alt="mark3"></a>
-                <a href=""><img src="mark/4.jpg" alt="mark4"></a>
-                <a href=""><img src="mark/5.jpg" alt="mark5"></a>
-                <a href=""><img src="mark/6.jpg" alt="mark6"></a>
+                <a href=""><img src="img/mark/3.jpg" alt="mark3"></a>
+                <a href=""><img src="img/mark/4.jpg" alt="mark4"></a>
+                <a href=""><img src="img/mark/5.jpg" alt="mark5"></a>
+                <a href=""><img src="img/mark/6.jpg" alt="mark6"></a>
             </div>
         </div>
     </div>
@@ -918,11 +683,11 @@
                         <a class="comment" href="">簡單生活感</a>                              
                     </div>
                     <div class="photos">
-                        <a href=""><img src="window/0/0.jpg" alt="window0/0"></a>
-                        <a href=""><img src="window/0/1.jpg" alt="window0/1"></a>
-                        <a href=""><img src="window/0/2.jpg" alt="window0/2"></a>
-                        <a href=""><img src="window/0/3.jpg" alt="window0/3"></a>
-                        <a href=""><img src="window/0/4.jpg" alt="window0/4"></a>
+                        <a href=""><img src="img/window/0/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/0/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/0/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/0/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/0/4.jpg" alt="window0/4"></a>
                     </div>
                 </li>
                 <li>
@@ -933,11 +698,11 @@
                         <a class="comment" href="">Pinkoi 本月嚴選：特殊造型的植栽</a>
                     </div>
                     <div class="photos">
-                        <a href=""><img src="window/1/0.jpg" alt="window0/0"></a>
-                        <a href=""><img src="window/1/1.jpg" alt="window0/1"></a>
-                        <a href=""><img src="window/1/2.jpg" alt="window0/2"></a>
-                        <a href=""><img src="window/1/3.jpg" alt="window0/3"></a>
-                        <a href=""><img src="window/1/4.jpg" alt="window0/4"></a>
+                        <a href=""><img src="img/window/1/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/1/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/1/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/1/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/1/4.jpg" alt="window0/4"></a>
                     </div>
                 </li>
                 <li>
@@ -948,11 +713,11 @@
                         <a class="comment" href="">令人放鬆的木質調擺飾</a>
                     </div>
                     <div class="photos">
-                        <a href=""><img src="window/2/0.jpg" alt="window0/0"></a>
-                        <a href=""><img src="window/2/1.jpg" alt="window0/1"></a>
-                        <a href=""><img src="window/2/2.jpg" alt="window0/2"></a>
-                        <a href=""><img src="window/2/3.jpg" alt="window0/3"></a>
-                        <a href=""><img src="window/2/4.jpg" alt="window0/4"></a>
+                        <a href=""><img src="img/window/2/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/2/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/2/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/2/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/2/4.jpg" alt="window0/4"></a>
                     </div>
                 </li>
                 <li>
@@ -963,11 +728,11 @@
                         <a class="comment" href="">Erica Choy - #stationeryaddict</a>
                     </div>
                     <div class="photos">
-                        <a href=""><img src="window/3/0.jpg" alt="window0/0"></a>
-                        <a href=""><img src="window/3/1.jpg" alt="window0/1"></a>
-                        <a href=""><img src="window/3/2.jpg" alt="window0/2"></a>
-                        <a href=""><img src="window/3/3.jpg" alt="window0/3"></a>
-                        <a href=""><img src="window/3/4.jpg" alt="window0/4"></a>
+                        <a href=""><img src="img/window/3/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/3/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/3/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/3/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/3/4.jpg" alt="window0/4"></a>
                     </div>
                 </li>
             </ul>
@@ -976,27 +741,27 @@
             <h3 class="title">第一手開箱推薦</h3>   
             <ul>
                 <li><a title="老宅街亮面和紙紙膠帶/寬4cm" href="">
-                        <img src="recommend/0.jpg">
+                        <img src="img/recommend/0.jpg">
                         <p>很漂亮的紙膠帶，包裝簡約精美。</p>
                     </a>
                 </li>
                 <li><a title="【Xuan Leather選。皮革】頸繩［真皮可調節式-植鞣黑色］掛帶證件套識別證專用" href="">
-                        <img src="recommend/1.jpg">
+                        <img src="img/recommend/1.jpg">
                         <p>精緻、配戴舒適，非常喜歡，謝謝❤️</p>
                     </a>
                 </li>
                 <li><a title="聞森笛︱愛心小兔（彩繪拼接版）卡祖笛 KAZOO" href="">
-                        <img src="recommend/2.jpg">
+                        <img src="img/recommend/2.jpg">
                         <p>很有趣的文創商品<br>出貨快、品質也很優，還有詳細的使用介紹</p>
                     </a>
                 </li>
                 <li><a title="極簡約帆布反折包-米白色 隨身包 / 斜背包 / 斜肩包 / 護照包 / 郵差包" href="">
-                        <img src="recommend/3.jpg">
+                        <img src="img/recommend/3.jpg">
                         <p>超快就收到了<br>品質也超讚</p>
                     </a>
                 </li>
                 <li><a title="夜眠長方無袖寬上衣＿星體微粒＿公平貿易" href="">
-                        <img src="recommend/4.jpg">
+                        <img src="img/recommend/4.jpg">
                         <p>衣服精緻又美麗❤️</p>
                     </a>
                 </li>
@@ -1008,13 +773,13 @@
         <h5>最近瀏覽過的商品</h5>
         <ul>
             <li>
-                <a href="" class="center" style="background-image: url('history/0.jpg');">
+                <a href="" class="center" style="background-image: url('img/history/0.jpg');">
                     <p class="info">小女孩洋裝＿青竹遊戲場細肩帶小洋裝＿公平貿易</p>
                     <i class="info">NT$1,280</i>
                 </a> 
             </li>
             <li>
-                <a href="" class="center" style="background-image: url('history/1.jpg');">
+                <a href="" class="center" style="background-image: url('img/history/1.jpg');">
                     <p class="info">Bonbies.手工製帽子.日本純棉純色雙面二重紗布.太陽蛋漁夫帽</p>
                     <i class="info">NT$779</i>
                 </a> 
@@ -1030,7 +795,7 @@
             </div>
             <div class="column">
                 <h4 class="graytitle">站內接受付款方式</h4>
-                <p><img src="payment.png" alt="payment"></p>
+                <p><img src="img/payment.png" alt="payment"></p>
             </div>
             <div class="column">
                 <h4 class="graytitle">我也要開設計館</h4>
@@ -1039,7 +804,7 @@
             </div>
             <div class="column edge">
                 <h4 class="graytitle">媒體報導</h4>
-                <p><img src="news.jpg" alt="news"></p>
+                <p><img src="img/news.jpg" alt="news"></p>
             </div>
         </div>
         <div class="sec1 grayborder">  
@@ -1065,7 +830,7 @@
     </footer>    
     <div class="modal loginpop">
         <div class="modal-login">   
-            <img src="logo.png" alt="logo_icon">
+            <img src="img/logo.png" alt="logo_icon">
             <h3>註冊個人帳號</h3>
             <form class="loginform" action="">
             <ul>
