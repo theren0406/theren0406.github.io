@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dental</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="assets/css/style.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/patient-info.css">
+</head>
+<body>
+	<form method="post" action="" class="adult">
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">姓名</label>
+			</div>
+			<div class="medium-7 end columns">					
+				<input type="text" name="name" placeholder="姓名" required>
+				<i class="fa fa-user"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">身分證字號</label>
+			</div>
+			<div class="medium-7 end columns">				
+				<input type="text" name="identity" placeholder="身分證字號" required>
+				<i class="fa fa-address-card-o"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">英文姓名</label>
+			</div>
+			<div class="medium-7 end columns">			
+				<input type="text" name="en-name" placeholder="英文姓名">
+				<i class="fa fa-globe"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">出生年月日</label>
+			</div>
+			<div class="small-7 medium-3 end columns">
+				<input type="date" name="birth-date" placeholder="出生年月日" required>
+				<i class="fa fa-birthday-cake"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right">
+				<label class="right inline">性別</label>
+			</div>
+			<div class="small-5 medium-4 end columns">
+				<label for="male">
+					<input type="radio" name="gender" value="male" id="male">男
+					<span></span>
+				</label>			
+				<label for="female">
+					<input type="radio" name="gender" value="female" id="female">女
+					<span></span>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">血型</label>
+			</div>
+			<div class="small-6 medium-3 columns">
+				<input type="text" name="blood-type" placeholder="血型">
+				<i class="fa fa-tint"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right">
+				<label class="right inline">婚姻</label>
+			</div>
+			<div class="small-6 medium-4 end columns">
+				<label for="married">
+					<input type="radio" name="marrige" value="married" id="married">已婚
+					<span></span>
+				</label>
+				<label for="single">
+					<input type="radio" name="marrige" value="single" id="single">未婚
+					<span></span>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">市內電話</label>
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="phone" placeholder="市內電話">
+				<i class="fa fa-phone"></i>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">手機號碼</label>
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="mobile" placeholder="手機號碼" required>
+				<i class="fa fa-mobile"></i>
+			</div>
+			<p class="medium-9 medium-offset-3 end columns">( 此手機號碼將作為日後查詢網路個人資料所使用，請詳填 )</p>
+		</div>
+
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">地址</label>
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="address" placeholder="地址">
+				<i class="fa fa-map-marker"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">E-mail
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="email" placeholder="E-mail">
+				<i class="fa fa-envelope-o"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-7 medium-offset-3 end columns"">
+				<fieldset class="required">
+					<legend>必填欄位</legend>
+					<div>
+						<label>開刀病史 :</label>
+						<label for="sergery-yes">
+							<input type="radio" name="sergery" class="yes" value="yes" id="sergery-yes" required>有
+							<span></span>
+						</label>
+						<label for="sergery-no">
+							<input type="radio" name="sergery" class="no" value="no" id="sergery-no">無
+							<span></span>
+						</label>
+						<textarea name="sergery-history" cols="30" rows="2"></textarea>
+					</div>	
+					<div>
+						<label>過去住院史 :</label>
+						<label for="hospital-yes">
+							<input type="radio" name="hospital" class="yes" value="yes" id="hospital-yes" required>有
+							<span></span>
+						</label>
+						<label for="hospital-no">
+							<input type="radio" name="hospital" class="no" value="no" id="hospital-no">無
+							<span></span>
+						</label>
+						<textarea name="hospital-history" cols="30" rows="2"></textarea>
+					</div>			
+					<div>
+						<label>過去疾病史 :</label>
+						<label for="medical-yes">
+							<input type="radio" name="medical" class="yes" value="yes" id="medical-yes" required>有
+							<span></span>
+						</label>
+						<label for="medical-no">
+							<input type="radio" name="medical" class="no" value="no" id="medical-no">無
+							<span></span>
+						</label>
+						<textarea name="medical-history" cols="30" rows="2"></textarea>
+					</div>	
+					<div>
+						<label>藥物過敏史 :</label>
+						<label for="allergy-yes">
+							<input type="radio" name="allergy" class="yes" value="yes" id="allergy-yes" required>有
+							<span></span>
+						</label>
+						<label for="allergy-no">
+							<input type="radio" name="allergy" class="no" value="no" id="allergy-no">無
+							<span></span>
+						</label>
+						<textarea name="allergy-history" cols="30" rows="2"></textarea>
+					</div>			
+					<div>
+						<label>慢性病 :</label>
+						<label for="chronic-yes">
+							<input type="radio" name="chronic" class="yes" value="yes" id="chronic-yes" required>有
+							<span></span>
+						</label>
+						<label for="chronic-no">
+							<input type="radio" name="chronic" class="no" value="no" id="chronic-no">無
+							<span></span>
+						</label>
+						<textarea name="chronic-history" cols="30" rows="2"></textarea>
+					</div>
+					<div>
+						<label><span>( 孕媽咪請填寫 ) </span>預產期 :&thinsp;</label>
+						<input type="text" name="delivery-date">
+					</div>	
+					<div>
+						<label>清潔習慣 :</label>
+						<label>每日刷牙次數</label>
+						<input style="width:22%" type="text" name="brush-time" required>
+						<br>
+						<label for="manual">
+							<input type="radio" name="how-to-clean" class="no" value="manual" id="manual" required>手動牙刷
+							<span></span>
+						</label>
+						<label for="electric">
+							<input type="radio" name="how-to-clean" class="no" value="electric" id="electric">電動牙刷
+							<span></span>
+						</label>
+						<label for="interbrush">
+							<input type="radio" name="how-to-clean" class="no" value="interbrush" id="interbrush">牙間刷
+							<span></span>
+						</label>
+						<label for="floss">
+							<input type="radio" name="how-to-clean" class="yes" value="floss" id="floss">牙線
+							<span></span>
+						</label>
+					</div>	
+					<div>
+						<label>牙科疾病/治療史 :</label>
+						<br>
+						<label for="periodontitis">
+							<input type="radio" name="treatment" class="no" value="periodontitis" id="periodontitis">牙周病
+							<span></span>
+						</label>
+						<label for="tooth-decay">
+							<input type="radio" name="treatment" class="no" value="tooth-decay" id="tooth-decay">蛀牙
+							<span></span>
+						</label>
+						<label for="other">
+							<input type="radio" name="treatment" class="yes" value="other" id="other">其他
+							<span></span>
+						</label>
+						<textarea name="treatment-history" cols="30" rows="2"></textarea>
+					</div>	
+					<div>
+						<label>口腔狀況 :</label>
+						<br>
+						<label for="bleeding">
+							<input type="radio" name="oral" class="no" value="bleeding" id="bleeding">刷牙流血
+							<span></span>
+						</label>
+						<label for="bad-breath">
+							<input type="radio" name="oral" class="no" value="bad-breath" id="bad-breath">口腔異味
+							<span></span>
+						</label>
+						<label for="oral-other">
+							<input type="radio" name="oral" class="yes" value="other" id="oral-other">其他
+							<span></span>
+						</label>
+						<textarea name="oral-condition" cols="30" rows="2"></textarea>
+					</div>													
+				</fieldset>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-6 medium-3 medium-offset-3 columns">
+				<input type="reset">	
+			</div>
+			<div class="small-6 medium-5 end columns">
+				<input type="submit">
+			</div>
+		</div>
+	</form>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

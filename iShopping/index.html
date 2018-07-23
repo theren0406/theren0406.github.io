@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iShopping</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        @keyframes mymove {
+            0% {background-position: -10% 0%;}
+            50% {background-position: 110% 0%;}
+            100% {background-position: -10% 0%;}
+        }
+
+        body {
+            width: 940px;
+            margin: 0 auto;
+            font-family: "Helvetica Neue",Helvetica,Arial,"Heiti TC","LiHei Pro","微軟正黑體","Microsoft JhengHei";
+            color:rgb(68, 68, 68);
+        }
+        input {
+            font-family: "Helvetica Neue",Helvetica,Arial,"Heiti TC","LiHei Pro","微軟正黑體","Microsoft JhengHei";  
+        }
+        button {
+            border: 0;
+            background-color: white;
+            cursor: pointer;
+        }
+        ul {
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        header {
+            height: 100px;
+            border-bottom: 1px dashed lightgray;
+        }
+        .logo{
+            display: block;
+            float: left;
+            width: 200px;
+            height: 100px;
+        }
+        header > ul {
+            display: inline-block;
+            font-size: 16px;
+        }
+        .menu {
+            float: left;
+            width: 100px;
+            height: 100px;   
+            text-align: center;
+            border-right: 1px dashed lightgray;   
+            background: unset;   
+            position: relative; 
+        }
+        .menu:hover {
+            background: #f9f9f9; /* For browsers that do not support gradients */    
+            background: -moz-linear-gradient(bottom right, #f9f9f9, #e9e9e9); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to bottom right, #f9f9f9, #e9e9e9); /* Standard syntax (must be last) */           
+        }       
+        .menu a {
+            display: block;
+            padding-top: 12px;
+            color: rgb(68, 68, 68);
+        }
+        .menu b {
+            background-image: url("img/heart.png");
+            display: none;
+            width: 20px;
+            height: 19px;
+            position: absolute;
+            left: 40px;
+            bottom: -10px;
+            z-index: 2;
+        }
+        .menu:first-child {
+            border-left: 1px dashed lightgray;
+        }
+        .submenu {
+            width: 240px;
+            font-size: 14px;
+            text-align: left;
+            padding: 10px;
+            border: 5px solid #f2f2f2;
+            background-color: white;
+            display: none;
+            position: relative;
+            z-index: 1;
+        }
+        .submenu a {
+            padding: 5px 10px;
+            letter-spacing: 2px;   
+        }
+        .submenu a:hover {
+            color: white;
+            background-color: rgb(68, 68, 68);
+        }
+
+        .searchdiv {
+            font-size: 14px;
+            float: right;
+            margin-top: 12px;
+        }
+        .total {            
+            color: rgb(85, 85, 85)
+        }
+        .total b {
+            color: rgb(187, 187, 187);
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        .login {
+            color: rgb(38, 141, 223);
+            float: right;
+            margin-top: 10px;
+        }
+        .login:hover {
+            text-decoration: underline;
+        }
+        .search {
+            padding-top: 5px; 
+        }
+        .search input{         
+            font-size: 15px;          
+        }
+        .search #key {
+            border: 3px solid rgb(226, 226, 226);
+            width: 220px;
+            padding: 5px;
+            color: rgb(119, 119, 119);
+        }
+        .search #key:focus {
+            color: rgb(51, 51, 51);
+        }
+        .search #submit {
+            width: 65px;
+            height: 33px;
+            background-color: rgb(68, 68, 68);
+            color: white;
+            border: 0;
+            border-radius: 3px;
+            margin-left: 3px;
+        }
+        .search #submit:hover {
+            background-color: #3d89c8;
+        }
+
+        .title {
+            margin: 0 0 15px 0;
+            color:rgb(92, 160, 152);           
+        }
+        .subtitle {
+            font-size: 14px;
+            margin-left: 10px; 
+            font-weight: normal;
+            color: rgb(68, 68, 68);
+        }
+        .box {
+            border-bottom: 1px dashed lightgray;           
+        }  
+        .box::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        /*    */
+        .hotbox {          
+            width: 670px;          
+        }
+        .newbox {
+            width: 700px;
+        }
+        .leftbox {
+            padding-top: 20px;
+            padding-bottom: 13px;  
+            float: left;   
+        }
+        .goods {
+            margin-right: 8px;  
+            margin-bottom: 4px;
+            display: inline-block;       
+        }    
+        #box4 {
+            border-bottom: 0;
+        }    
+        #size1 img {
+            width: 212px;
+            height: 212px;
+        }
+        #size2 img {
+            width: 180px;
+            height: 180px;
+        }
+        #size3 img {
+            width: 88px;
+            height: 86px;
+        }
+        #size3 {
+            float: right;
+            margin-right: 10px;
+        }
+        #size3 a {
+            display: block;
+        }
+        #size3-1 {
+            margin-bottom: 3px;
+        }
+        .rightbox {
+            float: right;
+            border-left: 1px dashed lightgray;    
+        }
+        .appbox {          
+            height: 420px;
+            width: 240px;
+            padding: 60px 0 0 23px;       
+        }
+        .appbox a:first-child img{
+            display: none;
+        }
+        .AD a {
+            position: absolute;
+        }
+        .gradient {
+            background: linear-gradient(130deg, #bfdee8, #fbe1d5, #bfdee8);
+            background-size: 180%;
+            animation: mymove 5s infinite;
+        }
+        nav {
+            padding: 20px 0;
+        }
+        nav a {
+            color: rgb(170, 170, 170);
+            margin-left: 22px;
+            font-weight: 700;
+        }
+        nav a:hover {
+            color: rgb(102, 102, 102);
+        }
+        nav a > i {
+            margin-right: 5px;
+        }
+        #size4 img {
+            width: 163px;
+            height: 163px;
+        }
+        .freebox {
+            height: 418px;
+            padding-left: 26px;
+        }
+        .freebox div {
+            height: 185px;
+            margin-top: 23px;
+        }
+        .category {
+            width: 175px;
+            height: 360px;
+            float: left;
+            padding-right: 38px;
+            margin-right: 38px;
+            border-right: 1px solid rgb(226, 226, 226);
+        }
+        .category a {
+            color: rgb(68, 68, 68);
+            display: block;
+        } 
+        .category h4 {
+            margin: 5px 0 10px 0;
+            border-bottom: 1px solid rgb(226, 226, 226);
+        }
+        .category h4:hover {
+            background: url("img/mark.png") no-repeat right;
+        }
+        .category p {
+            font-size: 13px;
+            height: 110px;
+            line-height: 1.4;
+            overflow: hidden;
+        }
+        .size5 {          
+            width: 170px;
+            height: 170px;                   
+        }
+        .center {
+            background-position: center;
+            background-size: cover;
+        }
+        .blogtitle {
+            font-weight: bold;
+            text-overflow: ellipsis;
+            font-size: 14px;            
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 13px 0;
+        }
+        .blogtitle:hover {
+            text-decoration: underline;
+        }        
+        .markedbox {
+            height: 425px;
+            padding: 24px 0 0 25px;
+        }
+        .leftline {
+            width: 115px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+        .leftline img {
+            height: 115px;
+        }
+        .rightline {
+            width: 85px;
+            display: inline-block;
+        }
+        .rightline img {
+            height: 85px;
+        }
+
+        .window li {
+            height: 90px;
+        }
+        
+        .pinkoi, footer a {
+            color: rgb(38, 141, 223);
+        }
+        .pinkoi:hover, footer a:hover {
+            text-decoration: underline;
+        }
+        .detail {
+            float: left;
+            font-size: 13px;
+        }
+        .detail i {
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 5px 5px;
+            border-color: #f3f3f3 transparent;
+            margin: 5px 0 0 10px;
+        }
+        .detail b {
+            color: rgb(104, 169, 46);
+            font-size: 11px;
+            float: right;
+            font-weight: normal;
+        }
+        .detail .comment {
+            display: block;
+            background-color: #f3f3f3;
+            width: 230px;
+            height: 45px;
+            padding: 5px 0 0 10px;
+            color: rgb(102, 102, 102);
+        }
+        .detail .comment:hover {
+            color: rgb(38, 141, 223);
+        }
+        .photos {
+            float: right;
+            margin-left: 15px;
+        }
+        .photos img {
+            margin-left: 5px;
+            width: 75px;
+            height: 75px;
+        }
+        .recommend {
+            width: 210px;
+            height: 415px;
+            padding: 25px 0 0 24px;            
+        }
+        .recommend a {
+            color: rgb(119, 119, 119);
+            display: block;
+            margin-bottom: 15px;
+        }
+        .recommend img {
+            width: 50px;
+            height: 50px;
+        }
+        .recommend p {
+            float: right;
+            width: 145px;
+            margin: 0;
+            font-size: 11px;
+        }
+        .grayborder {
+            border-top: 4px solid #e6e6e6;
+        }
+        .grayborder::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .graytitle {
+            color: rgb(167, 167, 167);
+        }
+        .history {
+            margin-bottom: 30px;
+        }   
+        .history li {
+            display: inline-block;
+            margin: 0 10px 10px 0;
+        }
+        .history a {
+            display: block;
+            width: 120px;
+            height: 120px;
+            font-size: 12px;
+            color: white;
+        }
+        .info {
+            position: relative;
+            top:60px;    
+            background-color: rgba(0,0,0,.3);      
+        }
+        .history a:hover .info{
+            background-color: rgb(68, 68, 68);
+        }
+        .history p {
+            margin: 0;
+            padding: 5px 0 4px 5px;
+            height: 30px;
+            overflow: hidden;          
+        }
+        .history i {
+            color: #78c042;
+            padding: 2px 0 0 5px;
+            display: block;
+            height: 20px;
+        }   
+        footer a {
+            font-size: 13px;
+        }   
+        .columnbox p {
+            font-size: 14px;
+        }
+        .column {
+            width: 208px;
+            margin: 0 35px 10px 0;
+            float: left;
+        }
+        .edge {
+            padding-right: 0;
+            margin-right: 0;
+            border-right: 0;
+        }
+        .sec1 {
+            padding: 20px 0;
+        }
+        .sec1 a {
+            margin-right: 10px;
+        }
+        .sec1 span {
+            float: right;
+            color: rgb(119, 119, 119);
+            font-size: 11px;
+            letter-spacing: 1px;
+            padding-top: 3px; 
+        }
+        .sec2 {
+            font-size: 13px;
+            margin-bottom: 50px;
+        }
+        .localebox {           
+            float: right;
+        }
+        .like {
+            width: 28px;
+            height: 28px;
+            display: none;
+            position: absolute;
+            background-image: url("img/whiteheart.png");
+        }
+        .like:hover {
+            display: block;
+            background-image: url("img/pinkheart.png");
+        }
+        .modal {
+            background-color: rgba(0,0,0,.5);
+            display: none;
+            position: fixed;      
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .modal-login {
+            width: 600px;
+            height: 550px;
+            margin: auto;
+            margin-top: -285px;
+            top: 50%;
+            background-color: rgb(251,251,251); 
+            position: relative;  
+            border-radius: 5px;    
+            padding-top: 20px;   
+        }
+        .modal-login img {
+            display: block;
+            margin: auto;
+        }
+        .modal-login h3 {
+            font-weight: 400;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .loginform {
+            width: 300px;  
+            margin: auto;
+        }
+        .modal-login li input {
+            border: 0;
+            width: 220px;
+            line-height: 35px;
+            font-size: 17px;  
+            margin-left: 10px;  
+            color: rgb(68, 68, 68);
+            background-color: rgb(251,251,251);        
+        }
+        .modal-login li i {
+            color: rgb(226,226,226);
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        .modal-login li {
+            margin: auto;
+            height: 35px; 
+            padding: 8px 5px;
+            border: 1px solid rgb(204,204,204);
+            border-top: 0; 
+        }
+        .modal-login li:first-child {
+            border-top: 1px solid rgb(226,226,226);
+            border-radius: 5px 5px 0 0;
+        }
+        .modal-login li:last-child {
+            margin-bottom: 0;
+            border-radius: 0 0 5px 5px;
+        }
+        .modal-close {
+            background-image: url("img/close.png");
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+        }
+        .submit {
+            border: 0;
+            margin: 0 auto 35px;
+            width: 100%;
+            font-size: 21px;
+            font-weight: 700;
+            padding: 8px 0;    
+            color: white;
+            border-radius: 5px;
+            background-color: rgb(245, 84, 140);     
+            transition: margin-top 0.1s, margin-bottom 0.1s; 
+        }
+        .submit:hover {
+            cursor: pointer;
+            margin-top: -3px;
+            margin-bottom: 38px;
+            box-shadow: 0px 3px 2px rgb(163, 34, 82),0px 5px rgb(200, 49, 102),0px 8px 8px rgba(0,0,0,.12);
+            background-color: rgb(255, 98, 153); 
+        }
+        .submit:active{
+            margin-top: 0px;
+            margin-bottom: 35px;
+            box-shadow:0 1px rgb(189, 44, 97);
+        }
+        .policy {
+            font-size: 13px;
+            margin: 22px auto;
+        }
+        .gologin {
+            font-size: 17px;
+            margin: auto;
+            text-align: center;
+        }
+        .modal-photo {
+            width: 900px;
+            height: 520px;
+            border-radius: 5px;
+            margin: auto;
+            margin-top: -300px;
+            padding: 30px;
+            top: 50%;
+            overflow: hidden;
+            position: relative;
+            background-color: rgb(250,250,250);
+        }
+        .photolist {
+            width: 4200px;
+            height: 100%;
+            position: relative;
+            left: -190px;
+        }
+        .photolist span{
+            display: inline-block;
+            height: 100%;
+        }
+        .item {
+            display: inline-block;
+            width: 140px;
+            margin-right: 40px;
+            border-radius: 5px;
+            border: 5px solid rgb(250,250,250);
+            box-shadow: 0px 0px 5px 2px rgb(226,226,226);
+            transition: width 0.5s;
+        }
+        .stop {
+            transition: width 0s;
+        }
+        .active {
+            width: 500px;
+            border: 10px solid rgb(250,250,250);
+            box-shadow: 0px 0px 10px 1px rgb(240,100,143);
+        }
+        .button {
+            color: rgb(226,226,226);
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+            margin-top: -20px;
+            top: 50%;
+        }
+        .button:hover {
+            color: rgb(240,100,143);
+        }
+        .prev {
+            left: 20px;
+        }
+        .next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo" href="/"><img src="img/logo.png" alt="logo_icon"></a>
+        <ul>
+            <li class="menu">
+                <a href="#box1">買設計<img src="img/nav1.png" alt="icon"></a>
+                <ul class="submenu">
+                    <li><a href="">所有商品分類</a></li>
+                    <li><a href="">免運專區</a></li>
+                    <li><a href="">二十四小時到貨</a></li>
+                    <li><a href="">下載 iShopping APP</a></li>
+                </ul>
+                <b></b>
+            </li>
+            <li class="menu">
+                <a href="#box2">找靈感<img src="img/nav2.png" alt="icon"></a>
+                <b></b>
+            </li>
+            <li class="menu">
+                <a href="#box3">逛櫥窗<img src="img/nav3.png" alt="icon"></a>
+                <ul class="submenu">
+                    <li><a href="">商品櫥窗</a></li>
+                    <li><a href="">拼貼我的櫥窗</a></li>
+                </ul>
+                <b></b>
+            </li>
+            <li class="menu">
+                <a href="#box4">讀設計<img src="img/nav4.png" alt="icon"></a>
+                <ul class="submenu">
+                    <li><a href="">設計誌</a></li>
+                    <li><a href="">設計師教練場</a></li>
+                    <li><a href="">好悅曆 &amp; 小店旅行地圖</a></li>
+                </ul>
+                <b></b>
+            </li>
+        </ul>
+        <div class="searchdiv">
+            <span class="total"><b>51,340</b>樣獨特商品</span>
+            <a class="login" href="#">登入/註冊</a>
+            <form class="search" method="get" action="/browse">
+                <input id="key" type="text" name="q" placeholder="搜尋好設計">
+                <input id="submit" type="submit" value="搜尋">
+            </form>
+        </div>
+    </header>      
+    <div class="box" id="box1">       
+        <div class="hotbox leftbox">
+            <h3 class="title">人氣推薦<span class="subtitle">快來看看今日最受網友推薦、好評不斷的商品，喜歡就趕快帶回家吧！</span>
+            </h3>             
+            <div id="size1">
+                <a class="goods" href=#><img src="img/hot/0.jpg" alt="photo0"></a><a class="goods" href="#"><img src="img/hot/1.jpg" alt="photo1"></a><a class="goods" href="#"><img src="img/hot/2.jpg" alt="photo2"></a>
+            </div>
+            <div id="size2">
+                <a class="goods" href="#"><img src="img/hot/3.jpg" alt="photo3"></a><a class="goods" href="#"><img src="img/hot/4.jpg" alt="photo4"></a><a class="goods" href="#"><img src="img/hot/5.jpg" alt="photo5"></a>
+                <div id="size3">
+                    <a class="goods" id="size3-1" href="#"><img src="img/hot/6.jpg" alt="photo6"></a><a class="goods" href="#"><img src="img/hot/7.jpg" alt="photo7"></a>
+                </div>
+            </div>             
+        </div>
+        <div class="appbox AD rightbox">
+            <a href="/24hr"><img src="img/may.jpg" alt="24hr"></a>
+            <a href="/app"><img src="img/app.jpg" alt="appDownLoad"></a>
+        </div>
+        <div class="modal photopop">          
+            <div class="modal-photo">
+                <div class="prev button"><i class="fa fa-arrow-circle-left fa-3x"></i></div>
+                <div class="photolist">
+                    <span></span><img class="item" src="hot/500x0.jpg" alt="photo0"><img class="item" src="hot/500x1.jpg" alt="photo1"><img class="item" src="hot/500x2.jpg" alt="photo2"><img class="item" src="hot/500x3.jpg" alt="photo3"><img class="item" src="hot/500x4.jpg" alt="photo4"><img class="item" src="hot/500x5.jpg" alt="photo5"><img class="item" src="hot/500x6.jpg" alt="photo6"><img class="item" src="hot/500x7.jpg" alt="photo7">
+                </div>
+                <div class="next button"><i class="fa fa-arrow-circle-right fa-3x"></i></div>
+            </div>
+        </div>
+    </div>
+    <a class="like" href="#"></a>
+    <nav class="box">
+        <a href="#"><i class="fa fa-shopping-bag fa-lg"></i>鞋子包包</a>
+        <a href="#"><i class="fa fa-diamond fa-lg"></i>配件飾品</a>
+        <a href="#"><i class="fa fa-home fa-lg"></i>居家良品</a>
+        <a href="#"><i class="fa fa-camera fa-lg"></i>衣著良品</a>
+        <a href="#"><i class="fa fa-pencil fa-lg"></i>文具卡片</a>
+        <a href="#"><i class="fa fa-television fa-lg"></i>3C · 家電</a>
+        <a href="#"><i class="fa fa-child fa-lg"></i>媽咪寶寶</a>
+        <a href="#"><i class="fa fa-cutlery fa-lg"></i>品味美食</a>
+    </nav>
+    <div class="box" id="box2">
+        <div class="newbox leftbox">
+            <h3 class="title">新品推薦</h3>
+            <div id="size4">
+                <a class="goods" href="#"><img src="img/new/0.jpg" alt="item0"></a><a class="goods" href="#"><img src="img/new/1.jpg" alt="item1"></a><a class="goods" href="#"><img src="img/new/2.jpg" alt="item2"></a><a class="goods" href="#"><img src="img/new/3.jpg" alt="item3"></a><a class="goods" href="#"><img src="img/new/4.jpg" alt="item4"></a><a class="goods" href="#"><img src="img/new/5.jpg" alt="item5"></a><a class="goods" href="#"><img src="img/new/6.jpg" alt="item6"></a><a class="goods" href="#"><img src="img/new/7.jpg" alt="item7"></a>
+            </div>
+        </div>
+        <div class="freebox rightbox">
+            <div class="freeship box">
+                <a href="#"><img src="img/free.png" alt="FreeShipping"></a>
+            </div>
+            <div class="discount AD">
+                <a href="#"><img style="display:inline;" src="img/discount/5off.png" alt="discount5off"></a>
+                <a href="#"><img style="display:none;" src="img/discount/10off.png" alt="discount10off"></a>
+                <a href="#"><img style="display:none;" src="img/discount/15off.png" alt="discount15off"></a>
+                <a href="#"><img style="display:none;" src="img/discount/25off.png" alt="discount25off"></a>
+            </div>
+        </div>
+    </div>
+    <div class="box" id="box3">
+        <div class="leftbox"> 
+            <h3 class="title">編輯嚴選文章</h3>
+            <div class="category">
+                <h4><a href="#">Pinkoi 大聲公</a></h4>
+                <a class="size5 center" href="" style="background-image: url('img/blog/3.jpg')"></a>
+                <a class="blogtitle" href="">城市漫遊：公館的 5 個秘密基地</a>
+                <p>位於台北市南區，公館是一塊長期被各種美麗文化澆灌的寶地。這裏有人文薈萃的台大校園、廣邀藝術家駐村創作的寶藏巖、各種二手書店、Live House 與五花八門的異國料理。不過，貪玩的小編想給大家推薦一些特別的～（摩拳擦掌）跟上步伐，今天就帶大家去參觀公館的</p>
+            </div>
+            <div class="category">
+                <h4><a href="#">Pinkoi 大聲公</a></h4>
+                <a class="size5 center" href="" style="background-image: url('img/blog/0.jpg')"></a>
+                <a class="blogtitle" href="https://www.pinkoi.com/magz/krmX6YTZ">目青的人生選物店：「做一杯溫開水，拍有溫度的照片。」</a>
+                <p>以影像佐詩，攝影師目青的影像泛著藍天與草地的清透色彩。徘徊在不具名的小弄，也佇立於孤高的頂端，他以極簡的構圖框住過路人的身影，留下霎那的靜美，也訴說一種恬淡、溫柔的生活哲學。「好緊張啊！」或許習慣藏身鏡頭後了，目青放下沈甸甸的相機包，邊看著訪綱，邊輕聲</p>
+            </div>         
+            <div class="category edge">
+                <h4><a href="#">五月，恣在旅行</a></h4>
+                <a class="size5 center" href="" style="background-image: url('img/blog/1.jpg')"></a>
+                <a class="blogtitle" href="">Pinkoi 私物招領：我最愛的私房景點</a>
+                <p>厭倦了大家都去過的熱門景點，但心中的旅遊魂仍然蠢蠢欲動嗎？生活中的每一個角落都可能藏著不經意的驚喜：頂樓的小木屋、巷尾被遺忘的花園、繞路而意外發現的林蔭小道⋯⋯。每個人都有一個最愛的私房景點，透過鏡頭將這些地方記錄下來，也是生活中的小浪漫。這週 Pi</p>
+            </div>
+        </div>
+        <div class="markedbox rightbox">
+            <h3 class="title">剛被收藏的設計品</h3>
+            <div class="leftline">
+                <a href=""><img src="img/mark/0.jpg" alt="mark0"></a>
+                <a href=""><img src="img/mark/1.jpg" alt="mark1"></a>
+                <a href=""><img src="img/mark/2.jpg" alt="mark2"></a>
+            </div>
+            <div class="rightline">
+                <a href=""><img src="img/mark/3.jpg" alt="mark3"></a>
+                <a href=""><img src="img/mark/4.jpg" alt="mark4"></a>
+                <a href=""><img src="img/mark/5.jpg" alt="mark5"></a>
+                <a href=""><img src="img/mark/6.jpg" alt="mark6"></a>
+            </div>
+        </div>
+    </div>
+    <div class="box" id="box4">
+        <div class="leftbox">    
+            <h3 class="title">熱門設計櫥窗</h3> 
+            <ul class="window">
+                <li>
+                    <div class="detail">
+                        <a class="pinkoi" href="">Pinkoi</a>
+                        <b>1個月前</b> 
+                        <i></i>
+                        <a class="comment" href="">簡單生活感</a>                              
+                    </div>
+                    <div class="photos">
+                        <a href=""><img src="img/window/0/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/0/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/0/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/0/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/0/4.jpg" alt="window0/4"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="detail">
+                        <a class="pinkoi" href="">Pinkoi</a>
+                        <b>1個月前</b> 
+                        <i></i>
+                        <a class="comment" href="">Pinkoi 本月嚴選：特殊造型的植栽</a>
+                    </div>
+                    <div class="photos">
+                        <a href=""><img src="img/window/1/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/1/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/1/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/1/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/1/4.jpg" alt="window0/4"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="detail">
+                        <a class="pinkoi" href="">Pinkoi</a>
+                        <b>3周前</b> 
+                        <i></i>
+                        <a class="comment" href="">令人放鬆的木質調擺飾</a>
+                    </div>
+                    <div class="photos">
+                        <a href=""><img src="img/window/2/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/2/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/2/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/2/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/2/4.jpg" alt="window0/4"></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="detail">
+                        <a class="pinkoi" href="">Pinkoi</a>
+                        <b>2周前</b> 
+                        <i></i>
+                        <a class="comment" href="">Erica Choy - #stationeryaddict</a>
+                    </div>
+                    <div class="photos">
+                        <a href=""><img src="img/window/3/0.jpg" alt="window0/0"></a>
+                        <a href=""><img src="img/window/3/1.jpg" alt="window0/1"></a>
+                        <a href=""><img src="img/window/3/2.jpg" alt="window0/2"></a>
+                        <a href=""><img src="img/window/3/3.jpg" alt="window0/3"></a>
+                        <a href=""><img src="img/window/3/4.jpg" alt="window0/4"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>   
+        <div class="recommend rightbox">
+            <h3 class="title">第一手開箱推薦</h3>   
+            <ul>
+                <li><a title="老宅街亮面和紙紙膠帶/寬4cm" href="">
+                        <img src="img/recommend/0.jpg">
+                        <p>很漂亮的紙膠帶，包裝簡約精美。</p>
+                    </a>
+                </li>
+                <li><a title="【Xuan Leather選。皮革】頸繩［真皮可調節式-植鞣黑色］掛帶證件套識別證專用" href="">
+                        <img src="img/recommend/1.jpg">
+                        <p>精緻、配戴舒適，非常喜歡，謝謝❤️</p>
+                    </a>
+                </li>
+                <li><a title="聞森笛︱愛心小兔（彩繪拼接版）卡祖笛 KAZOO" href="">
+                        <img src="img/recommend/2.jpg">
+                        <p>很有趣的文創商品<br>出貨快、品質也很優，還有詳細的使用介紹</p>
+                    </a>
+                </li>
+                <li><a title="極簡約帆布反折包-米白色 隨身包 / 斜背包 / 斜肩包 / 護照包 / 郵差包" href="">
+                        <img src="img/recommend/3.jpg">
+                        <p>超快就收到了<br>品質也超讚</p>
+                    </a>
+                </li>
+                <li><a title="夜眠長方無袖寬上衣＿星體微粒＿公平貿易" href="">
+                        <img src="img/recommend/4.jpg">
+                        <p>衣服精緻又美麗❤️</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="history grayborder">
+        <h4 class="graytitle">你的瀏覽紀錄小秘書</h4>
+        <h5>最近瀏覽過的商品</h5>
+        <ul>
+            <li>
+                <a href="" class="center" style="background-image: url('img/history/0.jpg');">
+                    <p class="info">小女孩洋裝＿青竹遊戲場細肩帶小洋裝＿公平貿易</p>
+                    <i class="info">NT$1,280</i>
+                </a> 
+            </li>
+            <li>
+                <a href="" class="center" style="background-image: url('img/history/1.jpg');">
+                    <p class="info">Bonbies.手工製帽子.日本純棉純色雙面二重紗布.太陽蛋漁夫帽</p>
+                    <i class="info">NT$779</i>
+                </a> 
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div class="columnbox grayborder">
+            <div class="column">
+                <h4 class="graytitle">關於Pinkoi的二三事</h4>
+                <p>Pinkoi 是亞洲領先的設計商品購物網站，有最優質的設計師社群，販售限量文創設計商品，歡迎你來買設計、賣設計．Pinkoi 是一間科技公司和熱愛好設計的公司，科技＋設計＝Pinkoi！一直以來 Pinkoi 成立的使命，就是要讓更多人看到好設計，讓更多人願意用購買支持好設計，享受生活美學...<a href="" >Pinkoi 是什麼？</a>
+                </p>
+            </div>
+            <div class="column">
+                <h4 class="graytitle">站內接受付款方式</h4>
+                <p><img src="img/payment.png" alt="payment"></p>
+            </div>
+            <div class="column">
+                <h4 class="graytitle">我也要開設計館</h4>
+                <p>我們邀請有共同理念的創作人來進駐 Pinkoi 設計館，提供一個不受氣候、場地侷束的環境，讓設計師，找到創作與販售的平台。對 Pinkoi 的設計館有興趣嗎？想擁有一間自己的設計館嗎？趕快來看 Pinkoi 開館的好處吧...<a href="" >瞭解更多</a>
+                </p>               
+            </div>
+            <div class="column edge">
+                <h4 class="graytitle">媒體報導</h4>
+                <p><img src="img/news.jpg" alt="news"></p>
+            </div>
+        </div>
+        <div class="sec1 grayborder">  
+            <a href="/about">關於我們</a>
+            <a href="/app">iOS &amp; Android</a>
+            <a href="/store/pinkoi?tag=禮物卡">Pinkoi 禮物卡</a>
+            <a href="/about/careers">工作機會</a>
+            <a href="/faq">問與答</a>
+            <a href="/policy">服務條款</a>
+            <a href="/policy#~g">退貨政策</a>
+            <span>© 2017 Pinkoi. All Rights Reserved.</span>
+        </div>
+        <div class="sec2">
+            <span style="vertical-align: bottom; width: 74px; height: 20px;"><iframe name="f34b47b96b7818" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" style="border: medium none; visibility: visible; width: 74px; height: 20px;" src="https://www.facebook.com/v2.5/plugins/like.php?action=like&amp;app_id=197994114318&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F0F7S7QWJ0Ac.js%3Fversion%3D42%23cb%3Df3a68b362973676%26domain%3Dwww.pinkoi.com%26origin%3Dhttps%253A%252F%252Fwww.pinkoi.com%252Ff3f138dcfedf00e%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2Filovepinkoi&amp;layout=button_count&amp;locale=zh_TW&amp;sdk=joey&amp;share=false&amp;show_faces=false" class="" height="1000px" frameborder="0" width="1000px"></iframe>
+            </span>
+            <span class="localebox">
+            語言/Language: <a class="location">繁體中文</a>
+            貨幣/Currency: <a class="location">新台幣</a>
+            </span>
+            <p>瀏覽模式：<a>手機版</a> / <span>電腦版</span>
+            </p>
+        </div>
+    </footer>    
+    <div class="modal loginpop">
+        <div class="modal-login">   
+            <img src="img/logo.png" alt="logo_icon">
+            <h3>註冊個人帳號</h3>
+            <form class="loginform" action="">
+            <ul>
+                <li><i class="fa fa-user fa-2x"></i><label for="username"></label>
+                    <input type="text" placeholder="帳號">
+                </li>
+                <li><i class="fa fa-lock fa-2x"></i><label for="password"></label>
+                    <input type="password" placeholder="密碼">
+                </li>
+                <li><i class="fa fa-envelope fa-lg"></i><label for="email"></label>
+                    <input type="email" placeholder="Email">
+                </li>
+            </ul>
+            <p class="policy">按下註冊鈕的同時，表示您已詳閱我們的<a class="pinkoi" href="/policy#~a" target="_blank">資料使用政策與使用條款</a>，同意使用 Pinkoi 所提供的服務並訂閱電子報。
+            </p>   
+           
+            <input class="submit" type="submit" value="註冊">                     
+            </form>
+            <p class="gologin">已經有帳號了 ? <a class="pinkoi">馬上登入</a></p>  
+            <div class="modal-close"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        var paused = false;
+
+        $(document).ready(function(){
+            $(".menu").mouseenter(function(){
+                $(this).children("ul").slideDown("fast");
+                $(this).children("b").css("display","block");
+            });
+            $(".menu").mouseleave(function(){
+                $(this).children("ul").slideUp("fast");
+                $(this).children("b").css("display","none");
+            });
+            $(".menu a").click(function(e){
+                e.preventDefault();
+                $('html, body').stop().animate({ scrollTop: $($(this).attr('href')).offset().top}, 300, 'linear');
+            });
+
+            $(".goods").mouseenter(function(e){
+                e = e.target.getBoundingClientRect();
+                var l = e.right - 35;  //-7-28 (element's width
+                var t = $(this).offset().top + 10;
+                $(".like").css({'left':l,'top':t,'display':'block'});
+            });
+            $(".goods").mouseleave(function(e){
+                if(e.relatedTarget !== $(".like")[0]){
+                    $(".like").css('display','none');
+                }
+            });
+            $(".goods").click(function(){
+                $(".active").removeClass("active");
+                var index = $(this).children().attr("alt");
+                $(".photolist img[alt="+index+"]").addClass("active");
+                $(".photolist").css("left", index.substring(5) * -190 + 190);
+                $(".photopop").fadeIn();
+                $("body").css("overflow","hidden");
+            });
+
+            $("nav a").click(function(e){
+                $("nav").toggleClass("gradient");
+                e.preventDefault();
+            });
+
+            $(".login, .like").click(function(){
+                $(".loginpop").fadeIn();
+                $("body").css("overflow","hidden");
+            });
+            function modalClose(){
+                $(".modal").fadeOut();
+                $("body").css("overflow","visible");
+            }
+            $(".modal-close").click(function(){
+                modalClose();
+            });
+            $(window).click(function(e){
+                if (e.target == $(".modal")[0]|| e.target == $(".modal")[1]) {
+                    modalClose();
+                } 
+            });
+            $(".modal-login input").focus(function() {
+                $(".modal-login i").css( "color", "rgb(226,226,226)");
+                $(this).siblings("i").css( "color", "rgb(243,134,171)");
+            });
+         
+            $(".prev").click(function(){
+                
+                // if($(".photolist").css("left") == "-190px"){                   
+                //     $(".photolist img:eq(10)").addClass("stop active");               
+                //     $(".active").first().addClass("stop").removeClass("active");
+                //     $(".photolist").css("left", "-1710px"); 
+                // }
+                if ($(".photolist").css("left") == "190px") {
+                    return;
+                }
+                $(".photolist").animate({left: "+=190"}, "500" );
+                $(".active").prev().addClass("active");
+                $(".active").last().removeClass("stop active");  
+            }); 
+
+            $(".next").click(function(){ 
+
+                // if ($(".photolist").css("left") == "-1520px"){
+                //     $(".photolist").css("left", "0px");                 
+                //     $(".photolist img:eq(1)").addClass(" active");
+                //     $(".active").last().removeClass("active");       
+                // }           
+                if ($(".photolist").css("left") == "-1140px") {
+                    return;
+                }
+                $(".photolist").animate({left: "-=190"}, "500" );
+                $(".active").next().addClass("active");
+                $(".active").first().removeClass(" active");                            
+            });
+
+            $(".appbox > a > img").mouseenter(function(){
+                paused = true;
+            });
+             $(".appbox > a > img").mouseleave(function(){
+                paused = false;
+            });
+            setInterval(function(){ 
+                if(!paused) {
+                appTimer(); discountTimer(); }
+            }, 5000);
+
+        });
+        
+        function appTimer(){      
+            $(".appbox > a").children().each(function() {
+                if ($(this).css('display') ==  "none") {
+                    $( this ).fadeIn("slow");
+                } else {
+                   $( this ).fadeOut("slow");
+                }
+            });    
+        }
+
+        function discountTimer(){
+            var on = $(".discount > a").children().filter(function() {
+                return $(this).css('display') == 'inline';
+            });
+            on.fadeOut("slow");
+
+            if (on.parent().is( ":last-child" )){
+                $(".discount > a:first").children().fadeIn("slow");
+            } else {
+                on.parent().next().children().fadeIn("slow");
+            }
+        }
+    </script>
+</body>
+</html>

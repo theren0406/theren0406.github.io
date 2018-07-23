@@ -1,0 +1,713 @@
+ <!DOCTYPE html>
+<html class="no-js" lang="en" id="timeTable">
+<head>
+  <meta charset="UTF-8">
+  <title>Timetable</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/foundation.min.css">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="account">
+        <a href="">登出</a>
+    </div>
+<div class="container timeTable">
+  <ul class="process">
+      <li class="active">1. 選擇預約項目</li>
+      <li>2. 確認預約資料</li>
+  </ul>
+  <h4 class="p-title">1. 預約項目</h4>
+  <div class="search">
+      <label for="">查詢醫師</label>
+      <div class="sel-wrapper">
+          <select name="search" id="search">
+              <option value="all">全部</option>
+              <option value="陳韻帆">陳韻帆</option>
+              <option value="王小明">王小明</option>
+              <option value="李小美">李小美</option>
+          </select>
+          <i class="fa fa-lg fa-angle-down"></i>
+      </div>
+  </div>
+
+  <div class="reg-detail">
+    <div class="week">2017.09.10 - 2017.09.16</div>
+    <!-- tabs-title-->
+    <div class="tab shift-tab">
+      <a class="tab-title active" href="#panelOne">一診</a>
+      <a class="tab-title" href="#panelTwo">二診</a>
+    </div>
+    <!-- tabs-content-->
+    <div class="tab-content">
+      <div class="tab-panel active" id="panelOne">
+        <ul class="list grid-x">
+          <li class="reg-desktop large-2 cell">
+            <h5>一診</h5>
+            <ul class="sub-list">
+              <li><p>早診<br>08:30-12:00</p></li>
+              <li><p>午診<br>14:30-17:30</p></li>
+              <li><p>晚診<br>18:00-21:00</p></li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.10 週日</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell s-pd">
+                        <p>13</p>掛號人數
+                      </div>
+                      <div class="auto cell s-pd">
+                        <p class="now-no">4</p>目前給號
+                      </div>
+                    </div>
+                    <p class="agent">代原 王小明醫師</p>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x" >
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell s-pd">
+                        <p>25</p>此診已滿
+                      </div>
+                      <div class="auto cell s-pd">
+                        <p class="now-no">8</p>目前給號
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="empty"></li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.11 週一</h5>
+            <ul class="sub-list">
+              <li class="empty"></li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>9</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>14</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.12 週二</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>11</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">王小明 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>5</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>20</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.13 週三</h5>
+            <ul class="sub-list">
+              <li class="full">
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>15</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>7</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">王小明 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>12</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.14 週四</h5>
+            <ul class="sub-list">
+              <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="close">
+                <i class="fa fa-minus-circle fa-3x"></i>
+                本日休診
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.15 週五</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">高圓圓 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>7</p>掛號人數
+                      </div>
+                    </div>
+                    <p class="agent">代原 王小明醫師</p>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x" >
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>20</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="empty"></li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.16 週六</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">王小明 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>13</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>16</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>25</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="panelTwo">
+        <ul class="list grid-x">
+          <li class="reg-desktop large-2 cell">
+            <h5>二診</h5>
+            <ul class="sub-list">
+              <li><p>早診<br>08:30-12:00</p></li>
+              <li><p>午診<br>14:30-17:30</p></li>
+              <li><p>晚診<br>18:00-21:00</p></li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.10 週日</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell s-pd">
+                        <p>13</p>掛號人數
+                      </div>
+                      <div class="auto cell s-pd">
+                        <p class="now-no">10</p>目前給號
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x" >
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell s-pd">
+                        <p>25</p>此診已滿
+                      </div>
+                      <div class="auto cell s-pd">
+                        <p class="now-no">8</p>目前給號
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x" >
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">王小明 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell s-pd">
+                        <p>25</p>此診已滿
+                      </div>
+                      <div class="auto cell s-pd">
+                        <p class="now-no">1</p>目前給號
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.11 週一</h5>
+            <ul class="sub-list">
+              <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="close">
+                <i class="fa fa-minus-circle fa-3x"></i>
+                本日休診
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.12 週二</h5>
+            <ul class="sub-list">
+              <li class="full">
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>15</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">高圓圓 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>2</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">王小明 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>10</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.13 週三</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">高圓圓 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>3</p>掛號人數
+                      </div>
+                    </div>
+                    <p class="agent">代原 王小明醫師</p>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x" >
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>20</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="empty"></li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.14 週四</h5>
+            <ul class="sub-list">
+              <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="close">
+                <i class="fa fa-minus-circle fa-3x"></i>
+                本日休診
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.15 週五</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>10</p>掛號人數
+                      </div>
+                    </div>
+                    <p class="agent">代原 王小明醫師</p>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">陳韻帆 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>8</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>5</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="large-auto cell">
+            <h5 class="date">2017.09.16 週六</h5>
+            <ul class="sub-list">
+              <li>
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>早診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">李小美 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>16</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>午診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">[陳韻帆] 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>25</p>掛號人數
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+              <li class="full">
+                <a class="grid-x">
+                  <div class="reg-time small-3 large-12 cell">
+                    <div>晚診</div>
+                    <img class="photo" src="./img/photo.png" alt="photo">
+                  </div>
+                  <div class="small-7 large-12 cell">王小明 醫師
+                    <div class="reg-no grid-x grid-padding-x">
+                      <div class="auto cell">
+                        <p>25</p>此診已滿
+                      </div>
+                    </div>
+                  </div>
+                  <div class="small-2 large-0 cell">
+                    <img class="arrow" src="./img/arrow.png" alt="arrow">
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!--scripts-->
+<script src="./js/main.js"></script>
+</body>
+</html>

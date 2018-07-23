@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DentalKid</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="assets/css/style.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/patient-info.css">
+</head>
+<body>
+	<form action="" class="patient-info child">
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">姓名</label>
+			</div>
+			<div class="medium-7 end columns">					
+				<input type="text" name="name" placeholder="姓名" required>
+				<i class="fa fa-user"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">身分證字號</label>
+			</div>
+			<div class="medium-7 end columns">				
+				<input type="text" name="identity" placeholder="身分證字號" required>
+				<i class="fa fa-address-card-o"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">英文姓名</label>
+			</div>
+			<div class="medium-7 end columns">			
+				<input type="text" name="en-name" placeholder="英文姓名">
+				<i class="fa fa-globe"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">出生年月日</label>
+			</div>
+			<div class="small-7 medium-3 end columns">
+				<input type="date" name="birth-date" placeholder="出生年月日" required>
+				<i class="fa fa-birthday-cake"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right">
+				<label class="right inline">性別</label>
+			</div>
+			<div class="small-5 medium-4 end columns no-right">
+				<label for="male">
+					<input type="radio" name="gender" value="male" id="male">	男
+					<span></span>
+				</label>			
+				<label for="female">
+					<input type="radio" name="gender" value="female" id="female">女
+					<span></span>
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">血型</label>
+			</div>
+			<div class="small-6 medium-3 columns">
+				<input type="text" name="blood-type" placeholder="血型">
+				<i class="fa fa-tint"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right">
+				<label class="right inline">小名</label>
+			</div>
+			<div class="small-6 medium-3 end columns">
+				<input type="text" name="nickname" placeholder="暱稱(小名)">
+				<i class="fa fa-child"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">市內電話</label>
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="phone" placeholder="市內電話">
+				<i class="fa fa-phone"></i>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">家長(一)</label>
+			</div>
+			<div class="small-6 medium-3 columns">
+				<input type="text" name="parent" placeholder="家長(一)">
+				<i class="fa fa-male"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right no-left">
+				<label class="right inline">家長(二)</label>
+			</div>
+			<div class="small-6 medium-3 end columns">
+				<input type="text" name="parentTwo" placeholder="家長(二)">
+				<i class="fa fa-female"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">家長手機(一)</label>
+			</div>
+			<div class="small-8 medium-4 columns">
+				<input type="text" name="mobile" placeholder="家長手機(一)" required>
+				<i class="fa fa-mobile"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right">
+				<label class="right inline">關係</label>
+			</div>
+			<div class="small-4 medium-2 end columns">
+				<input type="text" name="relationship" class="icon-out" placeholder="關係">
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">家長手機(二)</label>
+			</div>
+			<div class="small-8 medium-4 columns">
+				<input type="text" name="mobileTwo" placeholder="家長手機(二)">
+				<i class="fa fa-mobile"></i>
+			</div>
+			<div class="medium-1 columns hidden-label no-right">
+				<label class="right inline">關係</label>
+			</div>
+			<div class="small-4 medium-2 end columns">
+				<input type="text" name="relationshipTwo" class="icon-out" placeholder="關係">				
+			</div>
+			<p class="medium-9 medium-offset-3 end columns notice">( 此手機號碼將作為日後查詢網路個人資料所使用，請詳填 )</p>
+		</div>
+
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">地址</label>
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="address" placeholder="地址">
+				<i class="fa fa-map-marker"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">E-mail
+			</div>
+			<div class="medium-7 end columns">
+				<input type="text" name="email" placeholder="E-mail">
+				<i class="fa fa-envelope-o"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="medium-3 columns hidden-label">
+				<label class="right inline">出生週數</label>
+			</div>
+			<div class="small-5 medium-2 columns">
+				<input type="text" name="born-weeks" class="icon-out" placeholder="出生週數">
+			</div>
+			<div class="small-1 medium-1 end columns no-left">
+				<label class="inline">週</label>	
+			</div>
+
+			<div class="medium-2 columns hidden-label">
+				<label class="right inline">出生體重</label>
+			</div>
+			<div class="small-5 medium-2 columns">
+				<input type="text" name="born-weight" class="icon-out" placeholder="出生體重">
+			</div>
+			<div class="small-1 medium-1 end columns no-left">
+				<label class="inline">克</label>	
+			</div>		
+		</div>
+		<div class="row">
+			<div class="medium-7 medium-offset-3 end columns">
+				<fieldset class="required">
+					<legend>必填欄位</legend>
+					<div>
+						<label>開刀病史 : &nbsp;&nbsp;</label>
+						<label for="sergery-yes">
+							<input type="radio" name="sergery" class="yes" value="yes" id="sergery-yes" required>有
+							<span></span>
+						</label>
+						<label for="sergery-no">
+							<input type="radio" name="sergery" class="no" value="no" id="sergery-no">無
+							<span></span>
+						</label>
+						<textarea name="sergery-history" cols="30" rows="2"></textarea>
+					</div>	
+					<div>
+						<label>過去住院史 :</label>
+						<label for="hospital-yes">
+							<input type="radio" name="hospital" class="yes" value="yes" id="hospital-yes" required>有
+							<span></span>
+						</label>
+						<label for="hospital-no">
+							<input type="radio" name="hospital" class="no" value="no" id="hospital-no">無
+							<span></span>
+						</label>
+						<textarea name="hospital-history" cols="30" rows="2"></textarea>
+					</div>			
+					<div>
+						<label>過去疾病史 :</label>
+						<label for="medical-yes">
+							<input type="radio" name="medical" class="yes" value="yes" id="medical-yes" required>有
+							<span></span>
+						</label>
+						<label for="medical-no">
+							<input type="radio" name="medical" class="no" value="no" id="medical-no">無
+							<span></span>
+						</label>
+						<textarea name="medical-history" cols="30" rows="2"></textarea>
+					</div>	
+					<div>
+						<label>藥物過敏史 :</label>
+						<label for="allergy-yes">
+							<input type="radio" name="allergy" class="yes" value="yes" id="allergy-yes" required>有
+							<span></span>
+						</label>
+						<label for="allergy-no">
+							<input type="radio" name="allergy" class="no" value="no" id="allergy-no">無
+							<span></span>
+						</label>
+						<textarea name="allergy-history" cols="30" rows="2"></textarea>
+					</div>		
+					<div>
+						<label>兄弟姊妹 : &nbsp;&nbsp;</label>
+						<label for="sibling-yes">
+							<input type="radio" name="sibling" class="yes" value="yes" id="sibling-yes" required>有
+							<span></span>
+						</label>
+						<label for="sibling-no">
+							<input type="radio" name="sibling" class="no" value="no" id="sibling-no">無
+							<span></span>
+						</label>
+						<textarea name="sibling-no" cols="30" rows="2"></textarea>
+					</div>			
+					<div>
+						<label>主要照護者 :</label>
+						<br class="br">
+						<label for="parents">
+							<input type="radio" name="caretaker" class="no" value="parents" id="parents" required>父/母
+							<span></span>
+						</label>
+						<label for="grandparents">
+							<input type="radio" name="caretaker" class="no" value="grandparents" id="grandparents">(外)祖父母
+							<span></span>
+						</label>
+						<label for="nanny">
+							<input type="radio" name="caretaker" class="yes" value="nanny" id="nanny">保母
+							<span></span>
+						</label>
+					</div>		
+					<div>
+						<label>就讀學校 :</label>
+						<br class="br">
+						<label for="care-center">
+							<input type="radio" name="school" class="no" value="care-center" id="care-center" required>托嬰中心
+							<span></span>
+						</label>
+						<label for="kindergarten">
+							<input type="radio" name="school" class="no" value="kindergarten" id="kindergarten">幼兒園
+							<span></span>
+						</label>
+						<label for="elementary">
+							<input type="radio" name="school" class="yes" value="elementary" id="elementary">小學
+							<span></span>
+						</label>
+					</div>			
+					<div>
+						<label>牙科治療史 :</label>
+						<br>
+						<label for="fluoride">
+							<input type="radio" name="treatment" class="no" value="fluoride" id="fluoride">塗氟
+							<span></span>
+						</label>
+						<label for="exam">
+							<input type="radio" name="treatment" class="no" value="exam" id="exam">檢查
+							<span></span>
+						</label>
+						<label for="fill">
+							<input type="radio" name="treatment" class="yes" value="fill" id="fill">補牙
+							<span></span>
+						</label>
+						<label for="root-canal">
+							<input type="radio" name="treatment" class="yes" value="root-canal" id="root-canal">根管治療
+							<span></span>
+						</label>
+						<label for="anesthesia">
+							<input type="radio" name="treatment" class="yes" value="anesthesia" id="anesthesia">牙科麻藥注射
+							<span></span>
+						</label>
+					</div>	
+					<div>
+						<label>牙科配合程度 :</label>
+						<input type="text" name="coordination" style="width:47.25%" required>
+					</div>	
+					<div>
+						<label>口腔習慣 :</label>
+						<br>
+						<label for="dummy">
+							<input type="radio" name="oral" class="no" value="dummy" id="dummy">奶嘴
+							<span></span>
+						</label>
+						<label for="finger">
+							<input type="radio" name="oral" class="no" value="finger" id="finger">吸手指
+							<span></span>
+						</label>
+						<label>&nbsp;&nbsp;奶瓶</label>
+						<input style="width: 11%" type="text" name="bottle">
+						<label>次/天</label>
+					</div>	
+					<div>
+						<label>飲食習慣 :</label>
+						<label for="night-milk">
+							<input type="radio" name="food" class="no" value="night-milk" id="night-milk">夜奶
+							<span></span>
+						</label>
+						<br>
+						<label>母奶</label>
+						<input style="width: 11%" type="text" name="breast-milk">
+						<label>次/天</label>
+						<label>&nbsp;配方奶</label>
+						<input style="width: 11%" type="text" name="formula-milk">
+						<label>次/天</label>
+						
+					</div>	
+					<div>
+						<label>副食品用餐時間 :</label>
+						<br>
+						<label for="30mins">
+							<input type="radio" name="non-staple" class="no" value="30mins" id="30mins">30分鐘內
+							<span></span>
+						</label>
+						<label for="1hour">
+							<input type="radio" name="non-staple" class="no" value="1hour" id="1hour">1小時內
+							<span></span>
+						</label>
+						<label for="over-1hour">
+							<input type="radio" name="non-staple" class="yes" value="over-1hour" id="over-1hour">以上
+							<span></span>
+						</label>
+					</div>		
+					<div>
+						<label>口腔保健產品 :</label>
+						<br>
+						<label for="fluoride-tablet">
+							<input type="radio" name="health-care" value="fluoride-tablet" id="fluoride-tablet">氟錠
+							<span></span>
+						</label>
+						<label for="xylitol">
+							<input type="radio" name="health-care" value="xylitol" id="xylitol">Xylitol噴劑
+							<span></span>
+						</label>
+					</div>		
+					<div>
+						<label>潔牙習慣 :</label>
+						<br>
+						<label for="gauze">
+							<input type="radio" name="how-to-clean" class="no" value="gauze" id="gauze" required>紗布
+							<span></span>
+						</label>
+						<label for="toothbrush">
+							<input type="radio" name="how-to-clean" class="no" value="toothbrush" id="toothbrush">牙刷
+							<span></span>
+						</label>
+						<label for="floss">
+							<input type="radio" name="how-to-clean" class="yes" value="floss" id="floss">牙線
+							<span></span>
+						</label>
+						<label for="toothpaste">
+							<input type="radio" name="how-to-clean" class="yes" value="toothpaste" id="toothpaste">牙膏(含/不含氟)
+							<span></span>
+						</label>
+					</div>													
+				</fieldset>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-6 medium-3 medium-offset-3 columns">
+				<input type="reset">	
+			</div>
+			<div class="small-6 medium-5 end columns">
+				<input type="submit">
+			</div>
+		</div>
+	</form>
+
+
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
