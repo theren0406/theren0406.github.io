@@ -1331,7 +1331,7 @@ var App = function (_Component) {
 			selectedVideo: null
 		};
 
-		_this.videoSearch('blackpink');
+		_this.videoSearch('coldplay');
 		return _this;
 	}
 
