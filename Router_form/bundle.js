@@ -49212,7 +49212,7 @@
 	var CREATE_POST = exports.CREATE_POST = 'create_post';
 	var DELETE_POST = exports.DELETE_POST = 'delete_post';
 
-	var ROOT_URL = 'http://reduxblog.herokuapp.com/api';
+	var ROOT_URL = 'https://reduxblog.herokuapp.com/api';
 	var API_KEY = '?key=theren0406';
 
 	function fetchPosts() {
