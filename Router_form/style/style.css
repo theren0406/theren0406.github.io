@@ -57,7 +57,7 @@ div.container {
   	animation: spin 2s linear infinite;
 }
 #newLoader {
-	margin: 40% auto;
+	margin: 40% auto 60%;
 }
 
 .title {
