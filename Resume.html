@@ -1,19 +1,237 @@
-﻿<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>MyResume</title>
-    <meta charset="utf-8" />
-    <style>
-        body {
-            width:900px;
-            margin:auto;
-            color:lightsteelblue;
-            font-family:'Microsoft JhengHei';
-        }
-    </style>
+	<meta charset="UTF-8">
+	<title>Resume</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="./Resume/styles/style.css">
 </head>
 <body>
-    <h1>My RESUME</h1>
-    <p>Test</p>
- </body>
+	<div class="container row">
+		<div class="intro col-12 col-md-5">
+			<div class="profile">
+				<div class="photo">
+					<img src="./Resume/images/photo.jpg" alt="headshot">
+				</div>
+				<h1>陳韻帆</h1>
+				<p>網頁前端工程師</p>
+			</div>
+			<div class="about">
+				<h4>關於我</h4>
+				<p>
+					我叫陳韻帆，畢業於國立中央大學企業管理學系，喜歡旅行，喜歡學習語言。個性較為安靜，有耐心及毅力，學習力及記憶力佳。
+				</p>
+				<h6>【決心成為程式開發者】</h6>
+				<p>
+					從中央企管畢業後，我從事了國貿助理的工作一段時間，但例行的工作漸漸無法滿足自己，於是決心轉換跑道，報名了資策會的全方位程式設計養成班，投入這變化快速但充滿了挑戰的世界。
+				</p>
+				<h6>【完整上線產品的專案開發經驗】</h6>
+				<p>
+					在上一份工作中，我參與實際開發流程，了解從客戶需求變成實際產品的過程中，是如何與各方溝通與合作，學習優化行動裝置體驗，製作手機為優先的RWD網頁。
+					在專案前端的製作告一段落後，我也負責部分後端PHP，與客戶端確認API規格等等的工作。
+					在開發新專案的同時，我也在維護過去專案的過程中，加強了Debug的能力
+				</p>
+				<h6>【勇於接受挑戰的學習家】</h6>
+				<p>
+					為了成為更優秀的工程師，我在
+					<a class="modal-btn" data-toggle="modal" data-target="#modal" data-img="./Resume/images/courses.jpg" href="#" data-title="選修中的各種課程">udemy</a>
+					上選修React及Vue的相關課程，不斷精進自己的同時也加強英文的聽讀能力。我有一顆負責任的心，努力完成工作中被交辦的任務，重視團隊合作與溝通，期待能加入一個共同成長的團隊，打造一流的產品服務。
+				</p>
+			</div>
+			<div class="contact">
+				<h5>聯絡方式</h5>
+				<div>
+					<i class="fa fa-envelope"></i>
+					theren0406@gmail.com
+				</div>
+				<div>
+					<i class="fa fa-phone-square"></i>
+					0917-762198
+				</div>
+				<div>
+					<i class="fa fa-github-alt"></i>
+					<a target="_blank" rel="noopener noreferrer" href="https://github.com/theren0406">https://github.com/theren0406</a>
+				</div>
+			</div>
+		</div>
+		<div class="detail col-12 col-md-7">
+			<section class="experience">
+				<h4 class="title">經歷</h4>
+					<ul>
+						<li>
+							<i class="square"></i>
+							<h6 class="subtitle">前端工程師
+								<span>2017/08 - 2018/01</span>
+							</h6>
+							<p>創實雲端科技有限公司</p>
+							<p class="content">
+								負責
+								<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=Q_uKYpOwyxA">送子鳥App</a>
+								專案之前端頁面<br>
+								將設計完成之頁面進行切版，製作RWD網頁<br>
+								與後端人員合作，做版面規劃及API資料串接<br> 
+								實作金流以及第三方API的串接<br>
+								製作客製化
+								<a class="modal-btn" data-toggle="modal" data-target="#modal" data-img="./Resume/images/dashboard.jpg" href="#" data-title="管理後台介面">管理後台</a><br>
+								維護禾馨診所App及網站、
+								<a target="_blank" rel="noopener noreferrer" href="https://waitinfo.dianthus.info/webWaitInfo.php">候診資訊</a> UI優化
+							</p>
+						</li>
+						<li>
+							<h6 class="subtitle">觀光業勤務人員
+								<span>2015/04 - 2016/04</span>
+							</h6>
+							<p>日本打工度假</p>
+							<p class="content">
+								設施介紹及處理旅客問題<br> 
+								提供中日翻譯及英日翻譯服務
+							</p>
+						</li>
+						<li>
+							<h6 class="subtitle">業務助理
+								<span>2011/02 - 2014/12</span>
+							</h6>
+							<p>春伍企業有限公司</p>
+							<p class="content">
+								聯絡國外廠商，處理訂單、採購以及報關事宜<br> 
+								製作銷售文件與報表，協助分析每個月的銷量<br>  
+								控管庫存，安排倉庫出貨及相關客戶服務<br> 
+							</p>
+						</li>
+					</ul>
+			</section>
+			<section class="experience">
+				<h4 class="title">學歷</h4>
+					<ul>
+						<li>
+							<h6 class="subtitle">微軟全方位應用程式設計班
+								<span>2016/06 - 2016/12</span>
+							</h6>
+							<p>資策會 數位教育中心</p>
+							<p class="content">
+								學習MSSQL資料庫設計，後端C#程式語言以及ASP.NET MVC 網站開發，也學習前端網頁開發，HTML、CSS、JavaScript、jQuery、AJAX等技術
+							</p>
+						</li>
+						<li>
+							<h6 class="subtitle">國立中央大學 企業管理學系
+								<span>2005/09 - 2009/06</span>
+							</h6>
+							<p class="content">
+								學習五大管理領域（生管、行銷、財管、資管、人資）
+							</p>
+						</li>
+					</ul>
+			</section>
+			<section>
+				<h4 class="title">語言</h4>
+					<ul>
+						<li>
+							<p>英文： TOEIC 885分</p>
+						</li>
+						<li>
+							<p>日文： JLPT N1（精通）</p>
+						</li>
+					</ul>
+			</section>
+			<section>
+				<h4 class="title">作品集</h4>
+					<ul>
+						<li>
+							<a target="_blank" rel="noopener noreferrer" href="https://theren0406.github.io/index.html">
+								https://theren0406.github.io/index.html
+							</a>
+							<p class="content">過去專案 & 練習作品</p>
+						</li>
+						<li>
+							<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=71FWsMdCYCI">
+								https://www.youtube.com/watch?v=71FWsMdCYCI
+							</a>
+							<p class="content">
+								資策會結訓之專題影片(UBrain數位教學平台)<br>
+								22:25的地方開始是我的討論區部分
+							</p>
+						</li>
+					</ul>
+			</section>
+			<section>
+				<h4 class="title">技能</h4>
+					<ul class="row">
+						<li class="col-sm-6 col-sm-6 col-md-4">
+							<h6>Javascript / ES6</h6>
+							<p class="bar">
+								<span class="bar88"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>CSS3 /　SCSS</h6>
+							<p class="bar">
+								<span class="bar88"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>React + Redux</h6>
+							<p class="bar">
+								<span class="bar75"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>Bootstrap/RWD</h6>
+							<p class="bar">
+								<span class="bar88"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>Webpack</h6>
+							<p class="bar">
+								<span class="bar75"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>C#</h6>
+							<p class="bar">
+								<span class="bar60"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>PHP</h6>
+							<p class="bar">
+								<span class="bar60"></span>
+							</p>
+						</li>
+						<li class="col-sm-6 col-md-4">
+							<h6>SQL</h6>
+							<p class="bar">
+								<span class="bar60"></span>
+							</p>
+						</li>
+					</ul>
+			</section>
+		</div>	
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal-title"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<img id="modal-photo" src="" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script src="https://use.fontawesome.com/7eca92e105.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script src="./Resume/scripts/main.js"></script>
+
+</body>
 </html>

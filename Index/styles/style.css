@@ -1,0 +1,105 @@
+body {
+	font-family: 'Microsoft JhengHei';
+	font-weight: bold;
+}
+a {
+	text-decoration: none;
+	color: dimgray;
+	border: 2px solid gray;
+	box-shadow: 10px 10px gray;
+}
+img {
+	width: 150px;
+}
+h1 {
+	margin: 40px 20px;
+	color: #ec6d3f;
+}
+.container {
+	margin: 0 auto; 
+}
+.list {
+	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	margin-bottom: 20px;
+}
+.block {
+	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+	margin: 20px; 
+	padding: 20px 10px;
+	max-width: 270px;
+	border: 2px solid gray;
+	box-shadow: 10px 10px;
+}
+@media (min-width: 516px) and (max-width: 700px) {
+	.block {
+		max-width: none;
+	}
+}
+@media (min-width: 790px) and (max-width: 1020px) {
+	.block {
+		margin: 20px 40px; 
+	}
+}
+@media (min-width: 1021px) {
+	.block {
+		max-width: none;
+	}
+}
+@media (min-width: 1100px) {
+	.block {
+		margin: 20px 40px; 
+	}
+}
+.block div {
+	margin: 0 10px; 
+}
+.block h4 {
+	font-size: 18px;
+	margin: 5px 0 20px;
+	text-align: center;
+}
+@media (min-width: 516px) {
+	.block h4 {
+		margin: 0 0 5px;
+		text-align: left;
+	}
+}
+.photo {
+	line-height: 1;
+}
+.content {
+	width: 230px;
+	line-height: 1.8;
+	margin-top: 10px
+}
+.content p {
+	margin: 0;
+}
+.stars:hover {
+	border: 2px solid #FFD341;
+	box-shadow: 10px 10px #FFE584;
+}
+.pinkoi:hover {
+	border: 2px solid #EC6A3B;
+	box-shadow: 10px 10px #E5977B;
+}
+.estork:hover {
+	border: 2px solid #3763BD;
+	box-shadow: 10px 10px #6C91DC;
+}
+.form:hover {
+	border: 2px solid #FF5A8C;
+	box-shadow: 10px 10px #FF99B9;
+}
+.youtube:hover {
+	border: 2px solid #BE4040;
+	box-shadow: 10px 10px #C66666;
+}
+.crud:hover {
+	border: 2px solid #008080;
+	box-shadow: 10px 10px #00C6C6;
+}
