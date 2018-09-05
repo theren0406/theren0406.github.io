@@ -14,13 +14,14 @@ export default function(state = defaultData, action) {
     case ADD_ITEM:
       return [ ...state, action.payload ];
 
-    case DELETE_ITEM:
-      return state.filter( item => item.name !== action.payload.name );
+		case DELETE_ITEM:
+      return [ ...state ].filter( item => item.name !== action.payload.name );
 
 		case EDIT_ITEM:
 			let index = state.findIndex((obj => obj.name === action.prevName));
-			state[index] = action.payload;
-			return state;
+			const newState = [ ...state ];
+			newState[index] = action.payload;
+			return newState;
 	}	
 	return state;
 }

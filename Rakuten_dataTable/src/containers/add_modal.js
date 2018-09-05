@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addItem } from '../actions/index';
-import Modal from './Modal';
-import Input from './Input';
+import { addItem } from '../actions';
+import Modal from '../components/Modal';
+import Input from '../components/Input';
 
 class AddModal extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-				name: '',
-				phone: '',
-				email: '',
-				error: { name: '', phone: '', email: '' },
-			}
-		this.onInputChange = this.onInputChange.bind(this);
-		this.onAddClick = this.onAddClick.bind(this);
-		this.validate = this.validate.bind(this);
+	state = {
+		name: '',
+		phone: '',
+		email: '',
+		error: { name: '', phone: '', email: '' }
+	}
+	
+	onInputChange = (key, e) => {
+		this.setState({ [key]: e.target.value });
 	}
 
-	onInputChange(key, e) {
-		this.setState({[key]: e.target.value});
-	}
-	onAddClick() {
+	onAddClick = () => {
 		const { name, phone, email } = this.state;
 
 		if (this.validate()) {
@@ -31,30 +26,30 @@ class AddModal extends Component {
 				name: '',
 				phone: '',
 				email: '',
-				error: { name: '',phone: '', email: '' },
+				error: { name: '', phone: '', email: '' },
 			});
 			$('#add-modal').modal('hide');
 		}
 	}
 	validate(input = 'all') {
 		let noError = true;
-		let error = {...this.state.error}
-		
+		let error = { ...this.state.error }
+
 		// Validate the inputs
 		if (input === 'name' || input === 'all') {
 			if (!this.state.name) {
 				error.name = '請輸入姓名';
-				this.setState({error})
+				this.setState({ error })
 				noError = false;
 			} else {
 				const duplicate = this.props.data.some((item) => item.name === this.state.name);
 				if (duplicate) {
 					error.name = '資料庫已有此姓名的資料，請輸入其他姓名';
-					this.setState({error});
+					this.setState({ error });
 					noError = false;
 				} else {
 					error.name = '';
-					this.setState({error});
+					this.setState({ error });
 				}
 			}
 		}
@@ -62,26 +57,26 @@ class AddModal extends Component {
 			const number = /^[\d-]+$/;
 			if (this.state.phone && !this.state.phone.match(number)) {
 				error.phone = '請輸入數字';
-				this.setState({error});
+				this.setState({ error });
 				noError = false;
 			} else {
 				error.phone = '';
-				this.setState({error});
+				this.setState({ error });
 			}
 		}
-		if (input ==='email' || input === 'all') {
+		if (input === 'email' || input === 'all') {
 			const valid = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
 			if (!this.state.email) {
 				error.email = '請輸入電子信箱';
-				this.setState({error});
+				this.setState({ error });
 				noError = false;
 			} else if (!this.state.email.match(valid)) {
 				error.email = '請輸入有效的電子信箱';
-				this.setState({error});
+				this.setState({ error });
 				noError = false;
 			} else {
 				error.email = '';
-				this.setState({error});
+				this.setState({ error });
 			}
 		}
 		// If noError is ture, the form is fine to submit
@@ -92,7 +87,7 @@ class AddModal extends Component {
 		return (
 			<Modal id="add-modal" title="新增資料">
 				<form>
-					<Input 
+					<Input
 						stateKey="name"
 						label="姓名"
 						required="*必填"
@@ -101,7 +96,7 @@ class AddModal extends Component {
 						onChange={this.onInputChange}
 						onBlur={() => this.validate('name')}
 					/>
-					<Input 
+					<Input
 						stateKey="phone"
 						label="電話"
 						value={this.state.phone}
@@ -109,7 +104,7 @@ class AddModal extends Component {
 						onChange={this.onInputChange}
 						onBlur={() => this.validate('phone')}
 					/>
-					<Input 
+					<Input
 						stateKey="email"
 						label="電子信箱"
 						required="*必填"
@@ -120,10 +115,10 @@ class AddModal extends Component {
 					/>
 					<div className="btn_container">
 						<button className="btn btn-cancel" data-dismiss="modal">取消</button>
-     				<button type="button"
-     						className="btn btn-main"
-     						onClick={this.onAddClick}
-     					>新增
+						<button type="button"
+							className="btn btn-main"
+							onClick={this.onAddClick}
+						>新增
      				</button>
 					</div>
 				</form>

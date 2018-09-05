@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { deleteItem } from '../actions/index';
-import Modal from './Modal';
+import { deleteItem } from '../actions';
+import Modal from '../components/Modal';
 
 class DeleteModal extends Component {
-	constructor(props) {
-		super(props);
-
-		this.onDeleteClick = this.onDeleteClick.bind(this);
-	}
-
-	onDeleteClick() {
+	  
+	onDeleteClick = () => {
 		this.props.deleteItem(this.props.item);
 	}
 
