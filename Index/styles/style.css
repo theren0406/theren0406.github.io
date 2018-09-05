@@ -62,7 +62,13 @@ h1 {
 	margin: 5px 0 20px;
 	text-align: center;
 }
-@media (min-width: 516px) {
+@media (min-width: 516px) and (max-width: 700px) {
+	.block h4 {
+		margin: 0 0 5px;
+		text-align: left;
+	}
+}
+@media (min-width: 1021px) {
 	.block h4 {
 		margin: 0 0 5px;
 		text-align: left;
@@ -96,10 +102,14 @@ h1 {
 	box-shadow: 10px 10px #FF99B9;
 }
 .youtube:hover {
-	border: 2px solid #BE4040;
-	box-shadow: 10px 10px #C66666;
+	border: 2px solid #C71585;
+	box-shadow: 10px 10px #F554BA;
 }
 .crud:hover {
 	border: 2px solid #008080;
 	box-shadow: 10px 10px #00C6C6;
+}
+.datatable:hover {
+	border: 2px solid #C35252;
+	box-shadow: 10px 10px #DE6767;
 }
