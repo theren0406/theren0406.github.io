@@ -1,10 +1,11 @@
 {
-  "name": "rakuten_dataTable",
+  "name": "rakuten_datatable",
   "version": "1.0.0",
   "description": "A Data Table for Rakuten code interview",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "test": "jest",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "author": "theren0406",
@@ -18,10 +19,30 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "babel-jest": "^23.4.2",
     "babel-preset-stage-1": "^6.1.18",
+    "enzyme": "^3.5.1",
+    "enzyme-adapter-react-16": "^1.4.0",
+    "jest": "^23.5.0",
     "react": "16.3.2",
     "react-dom": "16.3.2",
     "react-redux": "5.0.7",
     "redux": "4.0.0"
+  },
+  "jest": {
+    "transform": {
+        "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+        "\\.css$": "identity-obj-proxy"
+    },
+    "collectCoverageFrom": [
+        "**/*.component.{js,jsx}",
+        "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+        "text-summary"
+    ],
+    "setupFiles": [ "raf/polyfill", "<rootDir>/src/setupTests.js" ]
   }
 }
