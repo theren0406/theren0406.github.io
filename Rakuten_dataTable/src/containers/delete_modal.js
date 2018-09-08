@@ -17,7 +17,7 @@ class DeleteModal extends Component {
       	<div className="btn_container">
      			<button className="btn btn-cancel" data-dismiss="modal">取消</button>
      			<button
-     				className="btn btn-main"
+     				className="btn btn-main" id="deleteBtn"
      				data-dismiss="modal"
      				onClick={this.onDeleteClick}
       		>確定

@@ -115,7 +115,7 @@ class AddModal extends Component {
 					/>
 					<div className="btn_container">
 						<button className="btn btn-cancel" data-dismiss="modal">取消</button>
-						<button type="button"
+						<button type="button" id="submitBtn"
 							className="btn btn-main"
 							onClick={this.onAddClick}
 						>新增

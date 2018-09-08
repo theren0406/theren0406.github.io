@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectItem, editItem } from '../actions';
-import DataList from './data_List';
+import DataList from './data_list';
 import Modal from '../components/Modal';
 import Input from '../components/Input';
 
@@ -122,7 +122,7 @@ class DataTable extends Component {
 						<div className="btn_container">
 							<button className="btn btn-cancel" data-dismiss="modal">取消</button>
 							<button
-								type="button"
+								type="button" id="editBtn"
 								className="btn btn-main"
 								onClick={this.onEditClick}
 							>儲存

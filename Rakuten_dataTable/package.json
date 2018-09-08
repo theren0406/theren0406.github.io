@@ -31,18 +31,20 @@
   },
   "jest": {
     "transform": {
-        "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
+      "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
     },
     "moduleNameMapper": {
-        "\\.css$": "identity-obj-proxy"
+      "\\.css$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
-        "**/*.component.{js,jsx}",
-        "!**/node_modules/**"
+      "**/*.component.{js,jsx}",
+      "!**/node_modules/**"
     ],
     "coverageReporters": [
-        "text-summary"
+      "text-summary"
     ],
-    "setupFiles": [ "raf/polyfill", "<rootDir>/src/setupTests.js" ]
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ]
   }
 }

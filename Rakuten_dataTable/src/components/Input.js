@@ -10,6 +10,7 @@ export default function Input(props) {
 		<div className="form-group">
 			<label>{label}<span className="required">{required}</span></label>
 			<input
+				id={stateKey}
 				className={className} type="text"
 				value={value}
 				onChange={(e) => onChange(stateKey, e)}
