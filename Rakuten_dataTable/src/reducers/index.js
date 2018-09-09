@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import DataReducer from './reducer_data';
-import SelectedItem from './reducer_selectedItem';
+import DataReducer from './data';
+import SelectedItem from './selectedItem';
 
 const rootReducer = combineReducers({
   data: DataReducer,
