@@ -96,7 +96,7 @@
 	  { store: createStoreWithMiddleware(_reducers2.default) },
 	  _react2.default.createElement(
 	    _reactRouterDom.HashRouter,
-	    { basename: '/Router_form' },
+	    null,
 	    _react2.default.createElement(
 	      'div',
 	      null,

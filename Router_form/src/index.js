@@ -14,7 +14,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <HashRouter basename="/Router_form">
+    <HashRouter>
     	<div>
     		<Switch>
     			<Route path="/" exact component={PostsIndex} />    
