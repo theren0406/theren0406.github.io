@@ -163,3 +163,65 @@ div.invalid-feedback {
 	font-size: 1rem;
 	font-weight: bold;
 }
+.errorContent {
+	display: flex;
+	height: 80vh;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+}
+.errorContent h1 {
+	letter-spacing: 10px;
+	font-size: 136px;
+	font-weight: bold;
+	border-bottom: 3px solid white;
+}
+.errorContent p {
+	font-size: 46px;
+}
+
+.cloud {
+	width: 350px; 
+	height: 120px;
+	background: #FFF;
+	border-radius: 100px;
+	position: absolute;
+	margin: 120px auto 20px;
+	z-index:-1;
+	transition: ease 1s;
+}
+.cloud:after, .cloud:before {
+	content: '';
+	position: absolute;
+	background: #FFF;
+	z-index: -1
+}
+.cloud:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	border-radius: 100px;
+}
+.cloud:before {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	border-radius: 200px;
+}
+.x1 {
+	top: -50px;
+	left: 100px;
+	transform: scale(0.3);
+	opacity: 0.9;
+}
+.x1_5{
+	top: 300px;
+	right: 50px;
+	transform: scale(0.5);
+	opacity: 0.7;
+}
+.x2 {
+	left: 250px;
+	top:30px;
+	transform: scale(0.6);
+	opacity: 0.4; 
+}
