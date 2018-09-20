@@ -37,7 +37,8 @@
       "\\.css$": "identity-obj-proxy"
     },
     "collectCoverageFrom": [
-      "**/*.component.{js,jsx}",
+      "src/**/*.{js,jsx}",
+      "!**/__tests__/*.test.{js,jsx}",
       "!**/node_modules/**"
     ],
     "coverageReporters": [
