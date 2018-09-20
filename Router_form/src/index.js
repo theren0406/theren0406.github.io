@@ -14,13 +14,12 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     	<div>
     		<Switch>
     			<Route path="/" exact component={PostsIndex} />    
     			<Route path="/posts/new" component={PostsNew} />
           <Route path="/posts/:id" component={PostsShow} />
-          <Redirect from="/" to="/Router_form" />		
     		</Switch>
     	</div>
     </BrowserRouter>
