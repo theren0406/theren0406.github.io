@@ -51288,9 +51288,9 @@
 	      { className: 'btn btn-custom', to: '/' },
 	      'Back To Home'
 	    ),
-	    _react2.default.createElement('div', { 'class': 'cloud x1' }),
-	    _react2.default.createElement('div', { 'class': 'cloud x1_5' }),
-	    _react2.default.createElement('div', { 'class': 'cloud x2' })
+	    _react2.default.createElement('div', { className: 'cloud x1' }),
+	    _react2.default.createElement('div', { className: 'cloud x1_5' }),
+	    _react2.default.createElement('div', { className: 'cloud x2' })
 	  );
 	};
 
