@@ -95,17 +95,17 @@
 	  _reactRedux.Provider,
 	  { store: createStoreWithMiddleware(_reducers2.default) },
 	  _react2.default.createElement(
-	    _reactRouterDom.BrowserRouter,
-	    null,
+	    _reactRouterDom.HashRouter,
+	    { basename: '/Router_form' },
 	    _react2.default.createElement(
 	      'div',
 	      null,
 	      _react2.default.createElement(
 	        _reactRouterDom.Switch,
 	        null,
+	        _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _posts_index2.default }),
 	        _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/new', component: _posts_new2.default }),
-	        _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/:id', component: _posts_show2.default }),
-	        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _posts_index2.default })
+	        _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/:id', component: _posts_show2.default })
 	      )
 	    )
 	  )
@@ -51083,7 +51083,11 @@
 	function mapStateToProps(_ref, ownProps) {
 		var posts = _ref.posts;
 
-		return { post: posts[ownProps.match.params.id] };
+		if (posts) {
+			return { post: posts[ownProps.match.params.id] };
+		} else {
+			return {};
+		}
 	}
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, { fetchPost: _index.fetchPost, deletePost: _index.deletePost })(PostsShow);
