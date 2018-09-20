@@ -87,6 +87,10 @@
 
 	var _posts_new2 = _interopRequireDefault(_posts_new);
 
+	var _error_page = __webpack_require__(357);
+
+	var _error_page2 = _interopRequireDefault(_error_page);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxPromise2.default)(_redux.createStore);
@@ -105,7 +109,8 @@
 	        null,
 	        _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _posts_index2.default }),
 	        _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/new', component: _posts_new2.default }),
-	        _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/:id', component: _posts_show2.default })
+	        _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/:id', component: _posts_show2.default }),
+	        _react2.default.createElement(_reactRouterDom.Route, { render: _error_page2.default })
 	      )
 	    )
 	  )
@@ -50890,7 +50895,7 @@
 						{ className: 'title' },
 						'\u5716\u66F8\u5217\u8868'
 					),
-					_react2.default.createElement(
+					!this.props.posts ? _react2.default.createElement('div', { className: 'loader' }) : _react2.default.createElement(
 						'ul',
 						null,
 						this.renderPosts()
@@ -51253,6 +51258,49 @@
 		validate: validate,
 		form: 'PostsNewForm'
 	})((0, _reactRedux.connect)(null, { createPost: _index.createPost })(PostsNew));
+
+/***/ }),
+/* 357 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	exports.default = function () {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'errorContent' },
+	    _react2.default.createElement(
+	      'h1',
+	      null,
+	      '404'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'NOT FOUND'
+	    ),
+	    _react2.default.createElement(
+	      _reactRouterDom.Link,
+	      { className: 'btn btn-custom', to: '/' },
+	      'Back To Home'
+	    ),
+	    _react2.default.createElement('div', { 'class': 'cloud x1' }),
+	    _react2.default.createElement('div', { 'class': 'cloud x1_5' }),
+	    _react2.default.createElement('div', { 'class': 'cloud x2' })
+	  );
+	};
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouterDom = __webpack_require__(60);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ })
 /******/ ]);

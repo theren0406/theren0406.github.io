@@ -32,9 +32,11 @@ class PostsIndex extends Component {
 					</Link>
       	</div>
       	<h3 className="title">圖書列表</h3>
+				{!this.props.posts ? 
+				<div className="loader"></div> :
       	<ul>
       		{this.renderPosts()}
-      	</ul>
+      	</ul>}
       </div>
     );
   }
