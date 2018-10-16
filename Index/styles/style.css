@@ -90,12 +90,12 @@ h1 {
 	box-shadow: 10px 10px #FFE584;
 }
 .pinkoi:hover {
-	border: 2px solid #EC6A3B;
-	box-shadow: 10px 10px #E5977B;
+	border: 2px solid rgb(255, 118, 68);
+	box-shadow: 10px 10px rgba(255, 118, 68, 0.5);
 }
 .estork:hover {
-	border: 2px solid #3763BD;
-	box-shadow: 10px 10px #6C91DC;
+	border: 2px solid rgb(74, 122, 218);
+	box-shadow: 10px 10px rgba(74, 122, 218, 0.5);
 }
 .form:hover {
 	border: 2px solid #FF5A8C;
@@ -103,13 +103,17 @@ h1 {
 }
 .youtube:hover {
 	border: 2px solid #C71585;
-	box-shadow: 10px 10px #F554BA;
+	box-shadow: 10px 10px rgba(199, 21, 133, 0.5);
 }
 .crud:hover {
 	border: 2px solid #008080;
-	box-shadow: 10px 10px #00C6C6;
+	box-shadow: 10px 10px rgba(0, 198, 198, 0.5);
 }
 .datatable:hover {
 	border: 2px solid #C35252;
-	box-shadow: 10px 10px #DE6767;
+	box-shadow: 10px 10px rgba(195, 82, 82, 0.6);
+}
+.stockTrader:hover {
+	border: 2px solid #30AAD6;
+	box-shadow: 10px 10px rgba(48, 170, 214, 0.5);
 }
