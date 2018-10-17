@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse" :class="{show: collapse}" id="navbarContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <router-link to="/portfolio" class="nav-link" active-class="active">我的投資組合</router-link>
+            <router-link to="/Vue_stockTrader/portfolio" class="nav-link" active-class="active">我的投資組合</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/stocks" class="nav-link" active-class="active">購買期貨</router-link>
+            <router-link to="/Vue_stockTrader/stocks" class="nav-link" active-class="active">購買期貨</router-link>
           </li>
         </ul>
         <ul class="nav navbar-nav">

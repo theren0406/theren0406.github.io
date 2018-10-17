@@ -29,7 +29,7 @@ export default {
       return this.stock.price.toFixed(1);
     },
     image() {
-      return `Vue_stockTrader/src/assets/${this.stock.id}.jpg`;
+      return `src/assets/${this.stock.id}.jpg`;
     },
     isShine() {
       return this.$store.getters.shine;
