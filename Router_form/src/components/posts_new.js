@@ -64,8 +64,8 @@ class PostsNew extends Component {
 					component={this.renderField}
 				/>
 				<div className="btn-container">
-					<button type="submit" className="btn btn-custom">新增</button>
 					<Link to="/" className="btn btn-danger">取消</Link>
+					<button type="submit" className="btn btn-custom">新增</button>
 				</div>
 			</form>
 		);

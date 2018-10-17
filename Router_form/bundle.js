@@ -51218,14 +51218,14 @@
 						'div',
 						{ className: 'btn-container' },
 						_react2.default.createElement(
-							'button',
-							{ type: 'submit', className: 'btn btn-custom' },
-							'\u65B0\u589E'
-						),
-						_react2.default.createElement(
 							_reactRouterDom.Link,
 							{ to: '/', className: 'btn btn-danger' },
 							'\u53D6\u6D88'
+						),
+						_react2.default.createElement(
+							'button',
+							{ type: 'submit', className: 'btn btn-custom' },
+							'\u65B0\u589E'
 						)
 					)
 				);
