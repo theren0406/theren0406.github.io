@@ -12,6 +12,7 @@ const router = new VueRouter({
   mode: 'history',
   routes
 });
+router.replace({ path: '/', redirect: '' })
 
 // global filter
 Vue.filter('currency', value => {
