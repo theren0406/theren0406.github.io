@@ -29,6 +29,7 @@ a[rel=popover]:hover {
 }
 .content {
 	font-size: 15px;
+	line-height: 1.6;
 }
 .container {
 	border: 2px solid var(--main-color);
@@ -36,13 +37,13 @@ a[rel=popover]:hover {
 	padding: 0;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-	.container {
+	.m-container {
 		min-width: 790px;
 	}
 }
 @media (min-width: 992px) {
-	.container {
-		max-width: 950px;
+	.m-container {
+		max-width: 960px;
 	}
 }
 .intro {
@@ -101,7 +102,7 @@ a[rel=popover]:hover {
 .about {
 	padding-top: 40px;
 }
-.about h4 {
+.about h4, .about h5, .about h6 {
 	text-align: center;
 }
 .about h6 {
@@ -111,10 +112,21 @@ a[rel=popover]:hover {
 .about p {
 	line-height: 2;
 }
+@media (min-width: 992px) {
+	.about p {
+		margin-bottom: 2rem;
+	}
+}
 .contact {
 	position: absolute;
 	bottom: 50px;
 	font-size: 15px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.english .contact {
+		position: static;
+		margin: 100px 0 30px;
+	}
 }
 @media (max-width: 768px) {
 	.contact {
