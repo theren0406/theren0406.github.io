@@ -1,0 +1,92 @@
+body {
+  font-family: 'Microsoft JhengHei';
+  font-size: 20px;
+}
+.container {
+  margin: 20px auto;
+}
+.calculator {
+  border: 2px solid rgb(39, 128, 131);
+  border-radius: 5px;
+  font-size: 32px;
+  width: 315px;
+  padding: 5px 15px;
+  margin: 10px auto 20px;
+}
+.cal-input {
+  border: 2px solid rgb(39, 128, 131);
+  color: rgb(27, 85, 87);
+  padding: 0 10px;
+  text-align: right;
+  line-height: 55px;
+  height: 60px;
+  width: 270px;  
+  margin: 5px;
+}
+.my-btn {
+  display: inline-block;
+  line-height: 75px;
+  height: 75px;
+  width: 60px;
+  margin: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  background-color: rgb(60, 186, 190);
+}
+.equal-btn {
+  background-color: rgb(190, 60, 60);
+}
+.operator-btn {
+  background-color: rgb(60, 190, 140);
+}
+.my-btn:hover {
+  opacity: 0.8;
+}
+.list li {
+  font-family: 'Microsoft JhengHei';
+  list-style-type: none;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color:rgb(27, 85, 87); 
+}
+.list-title {
+  font-size: 20px;
+}
+.list-item {
+  border: 1px solid rgb(27, 85, 87); 
+  border-radius: 3px;
+  padding: 5px 5px 5px 15px;
+}
+.delete {
+  float: right;
+  border-radius: 3px; 
+  color: rgb(190, 60, 60);
+  width: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+.delete:hover {
+  background-color: rgb(190, 60, 60);
+  color: white;
+}
+.triangle{
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.upTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;  
+  border-width: 0 10px 14px 10px;
+  border-color: transparent transparent rgb(60, 186, 190)  transparent;
+}
+.downTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 10px   0 10px;
+  border-color: rgb(60, 186, 190) transparent transparent transparent;
+}
