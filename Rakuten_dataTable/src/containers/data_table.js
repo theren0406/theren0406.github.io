@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectItem, editItem } from '../actions';
+
+import { checkError } from './validate';
 import DataList from './data_list';
 import Modal from '../components/Modal';
 import Input from '../components/Input';
@@ -32,51 +34,14 @@ class DataTable extends Component {
 
 	validate(input = 'all') {
 		let noError = true;
-		let error = { ...this.state.error }
+		const checked = checkError(input, this.state, this.props);
+		const { name, phone, email } = checked;
 
-		// validate the inputs
-		if (input === 'name' || input === 'all') {
-			if (!this.state.name) {
-				error.name = '請輸入姓名';
-				this.setState({ error })
-				noError = false;
-			} else {
-				const duplicate = this.props.data.some((item) => item.name === this.state.name);
-				if (duplicate && this.props.item.name !== this.state.name) {
-					error.name = '資料庫已有此姓名的資料，請輸入其他姓名';
-					this.setState({ error });
-					noError = false;
-				} else {
-					error.name = '';
-					this.setState({ error });
-				}
-			}
-		}
-		if (input === 'phone' || input === 'all') {
-			const number = /^[\d-]+$/;
-			if (this.state.phone && !this.state.phone.match(number)) {
-				error.phone = '請輸入數字';
-				this.setState({ error });
-				noError = false;
-			} else {
-				error.phone = '';
-				this.setState({ error });
-			}
-		}
-		if (input === 'email' || input === 'all') {
-			const valid = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
-			if (!this.state.email) {
-				error.email = '請輸入電子信箱';
-				this.setState({ error });
-				noError = false;
-			} else if (!this.state.email.match(valid)) {
-				error.email = '請輸入有效的電子信箱';
-				this.setState({ error });
-				noError = false;
-			} else {
-				error.email = '';
-				this.setState({ error });
-			}
+		this.setState({
+			error: checked
+		});
+		if (name !== '' || phone !== '' || email !== '') {
+			noError = false;
 		}
 		// If noError is ture, the form is fine to submit
 		return noError;
