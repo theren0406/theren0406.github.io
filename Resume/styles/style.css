@@ -1,6 +1,6 @@
 :root {
-    --main-color: #ec6d3f; 
-    /*#99ca45*/
+    --main-color: #FF7847; 
+    /*#ec6d3f*/
     --sub-color: #4ac7e9;
     /*#39A9DB*/
     --side-word: white;
@@ -144,7 +144,13 @@ a[rel=popover]:hover {
 .detail {
 	padding: 10px 50px 20px 20px;
 }
-@media (max-width: 991.98px) {
+@media (max-width: 768px) {
+	.detail {
+		padding-left: 0px;
+		padding-right: 35px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
 	.detail {
 		padding-left: 0px;
 	}
@@ -184,6 +190,13 @@ a[rel=popover]:hover {
 	float: right;
 	font-size: 14px;
 	color: var(--sub-color);
+}
+@media (max-width: 511px) {
+	.education .subtitle span {
+		float: none;
+		display: block;
+		padding-top: 5px;
+	}
 }
 .bar {
 	height: 20px;
