@@ -1,3 +1,6 @@
+html {
+	font-size: 18px;
+} 
 :root {
     --main-color: #FF7847; 
     /*#ec6d3f*/
@@ -20,6 +23,7 @@ i {
 a, a[rel=popover] {
 	color: var(--sub-color);
 	font-weight: bold;
+	font-size: 0.95rem;
 }
 a:hover {
 	color: var(--sub-color);
@@ -28,7 +32,7 @@ a[rel=popover]:hover {
 	text-decoration: none;
 }
 .content {
-	font-size: 15px;
+	font-size: 0.95rem;
 	line-height: 1.6;
 }
 .container {
@@ -38,12 +42,12 @@ a[rel=popover]:hover {
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
 	.m-container {
-		min-width: 790px;
+		min-width: 800px;
 	}
 }
 @media (min-width: 992px) {
 	.m-container {
-		max-width: 960px;
+		max-width: 990px;
 	}
 }
 .intro {
@@ -118,9 +122,8 @@ a[rel=popover]:hover {
 	}
 }
 .contact {
-	position: absolute;
-	bottom: 50px;
-	font-size: 15px;
+	margin: 100px 0 30px;
+	font-size: 0.95rem;
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
 	.english .contact {
@@ -128,14 +131,7 @@ a[rel=popover]:hover {
 		margin: 100px 0 30px;
 	}
 }
-@media (max-width: 768px) {
-	.contact {
-		position: static;
-		margin: 100px 0 30px;
-	}
-}
 .contact a {
-	color: var(--side-word);
 	font-weight: normal;
 }
 .contact a:hover {
@@ -189,7 +185,6 @@ a[rel=popover]:hover {
 .experience .subtitle span {
 	float: right;
 	font-size: 14px;
-	color: var(--sub-color);
 }
 @media (max-width: 511px) {
 	.education .subtitle span {
@@ -218,4 +213,7 @@ a[rel=popover]:hover {
 }
 #modal-photo {
 	width: 100%;
+}
+.skill h6 {
+	font-size: 0.9rem;
 }
