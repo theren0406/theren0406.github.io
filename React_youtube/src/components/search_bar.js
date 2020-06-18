@@ -1,38 +1,32 @@
-import React, { Component } from 'react';
-// const Component = React.Component;
+import React, { useState } from 'react';
 
-class SearchBar extends Component {
-	constructor(props) {
-		super(props);
+const SearchBar = ({ onSearchTermChange }) => {
+	const [query, setQuery] = useState('');
 
-		this.state = { term: '' };
-	}
-	render() {
-		return (
-			<form 
-				className="search-bar"
-				onSubmit={this.onInputSubmit.bind(this)}
-				>
-				<input 
-					value={this.state.term} 
-					onChange={e => this.setState({ term: e.target.value})} 
-					// onKeyDown={e => this.onEnterKeyDown(e)} 
-					placeholder=" Search.."/>
-				<button type="submit"><i className="fa fa-search"></i></button>
-			</form>
-		);
-	}
-
-	onInputSubmit(e) {
+	const onInputSubmit = e => {
 		e.preventDefault();
-		this.props.onSearchTermChange(this.state.term);
+		onSearchTermChange(query);
 	}
 
-	onEnterKeyDown(e) {
+	const onEnterKeyDown = e => {
 		if (e.key === 'Enter') {
-			this.props.onSearchTermChange(this.state.term);
+			onSearchTermChange(query);
 		}
 	}
+
+	return (
+		<form 
+			className="search-bar"
+			onSubmit={onInputSubmit}
+			>
+			<input 
+				value={query} 
+				onChange={e => setQuery(e.target.value)} 
+				// onKeyDown={e => onEnterKeyDown(e)} 
+				placeholder=" Search.."/>
+			<button type="submit"><i className="fa fa-search"></i></button>
+		</form>
+	);
 }
 
 export default SearchBar;

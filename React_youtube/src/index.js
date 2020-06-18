@@ -1,47 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDom from 'react-dom';
-import YTSearch from 'youtube-api-search';
+import searchYoutube from 'youtube-api-v3-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 
-import '../style/style.scss';
+// import '../style/style.scss';
 
-const API_KEY = 'AIzaSyDe2MozdnWp75mSCBc3pew3feBxIwZ-0k4';
+const API_KEY = 'AIzaSyA5br_ubQSOfDDGen0xVtR0AmBGYL8VK40';
 
-class App extends Component {
-	constructor(props) {
-		super(props);
+const App = () => {
+	const [videos, setVideos] = useState([])
+	const [selectedVideo, setSelectedVideo] = useState()
 
-		this.state = { 
-			videos : [],
-			selectedVideo: null
-		};
+	useEffect(() => {
+		videoSearch('coldplay')
+	}, []);
 
-		this.videoSearch('coldplay');		
+	const videoSearch = (query) => {
+		searchYoutube(API_KEY, { q: query }, (error, data) => {
+			const { items } = data
+
+			setVideos(items)
+			setSelectedVideo(items[0])
+		}); 
 	}
 
-	videoSearch(term) {
-		YTSearch({key: API_KEY, term: term}, (data) => {
-			this.setState({ 
-				videos: data,
-				selectedVideo: data[0]
-			});
-		console.log(data);
-		});
-	}
-
-	render() {
-		return (
-			<div>
-				<SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
-				<VideoDetail video={this.state.selectedVideo} />
-				<VideoList 
-					onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
-					videos={this.state.videos} />
-			</div>
-		);
-	}
+	return (
+		<div>
+			<SearchBar onSearchTermChange={query => videoSearch(query)}/>
+			<VideoDetail video={selectedVideo} />
+			<VideoList 
+				onVideoSelect={selectedVideo => setSelectedVideo(selectedVideo) }
+				videos={videos} />
+		</div>
+	);
 }
 
 ReactDom.render(<App />, document.querySelector('.container'));
