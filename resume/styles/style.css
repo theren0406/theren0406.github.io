@@ -1,0 +1,223 @@
+html {
+	font-size: 18px;
+} 
+:root {
+    --main-color: #FF7847; 
+    /*#ec6d3f*/
+    --sub-color: #4ac7e9;
+    /*#39A9DB*/
+    --side-word: white;
+}
+body {
+	font-family: 'Microsoft JhengHei';
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: inherit;
+}
+ul {
+	list-style-type: none;
+}
+i {
+	margin-right: 10px;
+}
+a, a[rel=popover] {
+	color: var(--sub-color);
+	font-weight: bold;
+	font-size: 0.95rem;
+}
+a:hover {
+	color: var(--sub-color);
+}
+a[rel=popover]:hover {
+	text-decoration: none;
+}
+.content {
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+.container {
+	border: 2px solid var(--main-color);
+	margin: 20px auto;
+	padding: 0;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.m-container {
+		min-width: 800px;
+	}
+}
+@media (min-width: 992px) {
+	.m-container {
+		max-width: 990px;
+	}
+}
+.intro {
+	position: relative;
+	padding: 20px 40px;
+	margin-bottom: 40px;
+	background-color: var(--main-color);
+	color: var(--side-word);
+}
+@media (max-width: 768px) {
+	.intro {
+		margin-bottom: 20px;
+	}
+}
+.intro::before {
+	content: "";
+  	display: block;
+  	position: absolute;
+  	bottom: 2px;
+  	right: 16px;
+  	width: 0;
+  	height: 0;
+  	border-top: 30px solid transparent;
+  	border-bottom: 30px solid transparent; 
+  	border-right:30px solid var(--sub-color); 
+  	-webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.intro::after {
+	content: "";
+  	display: block;
+  	position: absolute;
+  	bottom: -19px;
+  	right: -5px;
+  	width: 0;
+  	height: 0;
+  	border-top: 30px solid transparent;
+  	border-bottom: 30px solid transparent; 
+  	border-left:30px solid white; 
+  	-webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.profile {
+	text-align: center;
+}
+.photo {
+	width: 164px;
+	height : 164px;	
+	margin: 40px auto;
+	text-align: center;
+	border: 2px solid var(--side-word);
+}
+.photo img {
+	height : 160px;	
+}
+.about {
+	padding-top: 40px;
+}
+.about h4, .about h5, .about h6 {
+	text-align: center;
+}
+.about h6 {
+	color: darkslategray;
+	font-weight: bold;
+}
+.about p {
+	line-height: 2;
+}
+@media (min-width: 992px) {
+	.about p {
+		margin-bottom: 2rem;
+	}
+}
+.contact {
+	margin: 100px 0 30px;
+	font-size: 0.95rem;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.english .contact {
+		position: static;
+		margin: 100px 0 30px;
+	}
+}
+.contact a {
+	font-weight: normal;
+}
+.contact a:hover {
+	color: var(--side-word);
+}
+.detail {
+	padding: 10px 50px 20px 20px;
+}
+@media (max-width: 768px) {
+	.detail {
+		padding-left: 0px;
+		padding-right: 35px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.detail {
+		padding-left: 0px;
+	}
+}
+.title {
+	margin: 30px 0 20px 40px;
+	padding: 5px 0;
+	border-bottom: 2px solid #ccc;
+}
+
+.experience li {
+	position: relative;
+	padding: 0 0 30px 20px;
+	border-left: 2px solid var(--main-color);
+}
+.experience li:last-child {
+	padding-bottom: 0;
+}
+.experience li p:last-child {
+	margin-bottom: 0;
+}
+.experience .subtitle {
+	font-weight: bold;
+}
+.experience .subtitle::before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--main-color);
+  border-radius: 100%;
+}
+.experience .subtitle span, .experience .subName span {
+	float: right;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.experience .subName {
+	font-size: 0.9rem;
+}
+@media (max-width: 511px) {
+	.education .subtitle span, .experience .subName span {
+		float: none;
+		display: block;
+		padding-top: 5px;
+	}
+}
+.bar {
+	height: 20px;
+	border: 2px solid var(--main-color);
+}
+.bar span {
+	height: 100%;
+	display: block;
+	background-color: var(--main-color);
+}
+.bar88 {
+	width: 88%;
+}
+.bar75 {
+	width: 75%;
+}
+.bar50 {
+	width: 50%;
+}
+#modal-photo {
+	width: 100%;
+}
+.skill h6 {
+	font-size: 0.9rem;
+}
