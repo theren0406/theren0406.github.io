@@ -21,10 +21,9 @@ export function deleteItem(item) {
 		payload: item
 	};
 }
-export function editItem(item, prevName) {
+export function editItem(item) {
 	return {
 		type: EDIT_ITEM,
-		payload: item,
-		prevName
+		payload: item
 	};
 }

@@ -19,11 +19,18 @@ class AddModal extends Component {
 		this.setState({ [key]: e.target.value });
 	}
 
+	handleKeyDown = (e) => {
+		if (e.key === 'Enter') {
+			e.preventDefault()
+    }
+	}
+
 	onAddClick = () => {
 		const { name, phone, email } = this.state;
-
+		const id = new Date().getTime()
+	
 		if (this.validate()) {
-			this.props.addItem({ name, phone, email });
+			this.props.addItem({ id, name, phone, email });
 			this.setState({
 				name: '',
 				phone: '',
@@ -42,7 +49,7 @@ class AddModal extends Component {
 		this.setState({
 			error: checked
 		});
-		if (name !== '' || phone !== '' || email !== '') {
+		if (name !== '' || phone !== '' || email !== '') { 
 			noError = false;
 		}
 		// If noError is ture, the form is fine to submit
@@ -60,6 +67,7 @@ class AddModal extends Component {
 						value={this.state.name}
 						error={this.state.error.name}
 						onChange={this.onInputChange}
+						onKeyDown={this.handleKeyDown} 
 						onBlur={() => this.validate('name')}
 					/>
 					<Input
@@ -68,6 +76,7 @@ class AddModal extends Component {
 						value={this.state.phone}
 						error={this.state.error.phone}
 						onChange={this.onInputChange}
+						onKeyDown={this.handleKeyDown} 
 						onBlur={() => this.validate('phone')}
 					/>
 					<Input
@@ -77,6 +86,7 @@ class AddModal extends Component {
 						value={this.state.email}
 						error={this.state.error.email}
 						onChange={this.onInputChange}
+						onKeyDown={this.handleKeyDown} 
 						onBlur={() => this.validate('email')}
 					/>
 					<div className="btn_container">

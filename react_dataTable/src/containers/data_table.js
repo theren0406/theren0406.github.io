@@ -10,6 +10,7 @@ import Input from '../components/Input';
 
 class DataTable extends Component {
 	state = {
+		id: 0,
 		name: '',
 		phone: '',
 		email: '',
@@ -21,13 +22,21 @@ class DataTable extends Component {
 		this.setState({ ...item, error: { name: '', phone: '', email: '' } });
 		this.props.selectItem(item);
 	}
+
 	onInputChange = (key, e) => {
 		this.setState({ [key]: e.target.value });
 	}
+
+	handleKeyDown = (e) => {
+		if (e.key === 'Enter') {
+			e.preventDefault();
+    }
+	}
+
 	onEditClick = () => {
-		const { name, phone, email } = this.state;
+		const { id, name, phone, email } = this.state;
 		if (this.validate()) {
-			this.props.editItem({ name, phone, email }, this.props.item.name);
+			this.props.editItem({ id, name, phone, email });
 			$('#edit-modal').modal('hide');
 		}
 	}
@@ -66,6 +75,7 @@ class DataTable extends Component {
 							value={this.state.name}
 							error={this.state.error.name}
 							onChange={this.onInputChange}
+							onKeyDown={this.handleKeyDown}
 							onBlur={() => this.validate('name')}
 						/>
 						<Input
@@ -74,6 +84,7 @@ class DataTable extends Component {
 							value={this.state.phone}
 							error={this.state.error.phone}
 							onChange={this.onInputChange}
+							onKeyDown={this.handleKeyDown}
 							onBlur={() => this.validate('phone')}
 						/>
 						<Input
@@ -82,6 +93,7 @@ class DataTable extends Component {
 							value={this.state.email}
 							error={this.state.error.email}
 							onChange={this.onInputChange}
+							onKeyDown={this.handleKeyDown}
 							onBlur={() => this.validate('email')}
 						/>
 						<div className="btn_container">

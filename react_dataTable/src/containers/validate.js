@@ -8,12 +8,7 @@ export function checkError(input, state, props) {
     if (!state.name) {
       error.name = '請輸入姓名';
     } else {
-      const duplicate = props.data.some((item) => item.name === state.name);
-      if (duplicate) {
-        error.name = '資料庫已有此姓名的資料，請輸入其他姓名';
-      } else {
-        error.name = '';
-      }
+      error.name = '';
     }
   }
   if (input === 'phone' || input === 'all') {

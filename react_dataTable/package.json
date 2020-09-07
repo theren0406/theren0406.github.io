@@ -1,0 +1,54 @@
+{
+  "name": "react_datatable",
+  "version": "1.0.0",
+  "description": "dataTable practice",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development",
+    "test": "jest"
+  },
+  "author": "theren0406",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "jest": "^26.4.2",
+    "mini-css-extract-plugin": "^0.11.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(jsx|js)?$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.css$": "identity-obj-proxy"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/__tests__/*.test.{js,jsx}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "text-summary"
+    ],
+    "setupFiles": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  }
+}
