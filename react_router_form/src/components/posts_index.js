@@ -32,7 +32,7 @@ class PostsIndex extends Component {
 					</Link>
       	</div>
       	<h3 className="title">圖書列表</h3>
-				{!this.props.posts ? 
+				{_.isEmpty(this.props.posts) ? 
 				<div className="loader"></div> :
       	<ul>
       		{this.renderPosts()}
@@ -43,7 +43,7 @@ class PostsIndex extends Component {
 }
 
 function mapStateToProps({ posts }) {
-	return { posts };
+	return { posts: posts.data };
 }
 
 function MapDispatchToProps(dispatch) {

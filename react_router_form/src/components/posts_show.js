@@ -1,15 +1,26 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { fetchPost, deletePost } from '../actions/index';
 
 
 class PostsShow extends Component {
+	componentDidUpdate(prevProps) {
+		const id = this.props.match.params.id;
+		if (id !== prevProps.match.params.id) {
+			this.onFetchPost(id)
+		}
+	}
+
 	componentDidMount() {
-		window.scrollTo(0, 0);
 		// match the params from route :id
+			this.onFetchPost(this.props.match.params.id);
+	}
+
+	onFetchPost(id) {
+		window.scrollTo(0, 0);
 		if (!this.props.post) {
-			const id = this.props.match.params.id;
 			this.props.fetchPost(id);
 		}
 	}
@@ -27,7 +38,10 @@ class PostsShow extends Component {
 		// avoid the long syntax below
 		// this.props.posts[this.props.match.params.id];
 		
-		const { post } = this.props;
+		const { post, error } = this.props;
+		if (error) {
+			return <Redirect to="/404"/>
+		}
 		if (!post) {
 			return <div className="loader"></div>
 		}
@@ -75,10 +89,15 @@ class PostsShow extends Component {
 }
 
 function mapStateToProps({ posts }, ownProps) {
-	if (posts) {
-		return { post: posts[ownProps.match.params.id]};
+	const props = { error: posts.error };
+
+	if (_.isEmpty(posts.data)) {
+		return props;
 	} else {
-		return {};
+		return { 
+			...props,
+			post: _.find(posts.data, { id: parseInt(ownProps.match.params.id) }) 
+		};
 	}
 }
 
