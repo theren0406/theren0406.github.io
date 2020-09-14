@@ -16,7 +16,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <HashRouter>
-    	<Suspense fallback={<div>Loading...</div>}>
+    	<Suspense fallback={<div className="loader"></div>}>
     		<Switch>
     			<Route path="/" exact component={PostsIndex} />    
     			<Route path="/posts/new" component={PostsNew} />
