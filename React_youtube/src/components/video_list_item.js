@@ -11,7 +11,7 @@ const VideoListItem = ({ video, onVideoSelect }) => {
 					<img className="media-object" src={imageUrl} />
 				</div>
 				<div className="media-body">
-					<div className="media-heading">{title.replace(/&quot;/g,'"')}</div>
+					<div className="media-heading">{title.replace(/&quot;/g,'"').replace(/&#39;/g,"'")}</div>
 					<div className="media-channelTitle">{channelTitle}</div>
 				</div>
 			</div>
