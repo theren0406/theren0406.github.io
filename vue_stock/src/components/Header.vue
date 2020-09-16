@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-lg my-nav">
-      <router-link to="/Vue_stockTrader" exact class="navbar-brand">Stock Trader</router-link>
+      <router-link to="/" exact class="navbar-brand">Stock Trader</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
         @click="collapse = !collapse">
         <span class="navbar-toggler-icon"></span>
@@ -10,16 +10,16 @@
       <div class="collapse navbar-collapse" :class="{show: collapse}" id="navbarContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <router-link to="/Vue_stockTrader/portfolio" class="nav-link" active-class="active">我的投資組合</router-link>
+            <router-link to="/portfolio" class="nav-link" active-class="active">我的投資組合</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/Vue_stockTrader/stocks" class="nav-link" active-class="active">購買期貨</router-link>
+            <router-link to="/stocks" class="nav-link" active-class="active">購買期貨</router-link>
           </li>
         </ul>
         <ul class="nav navbar-nav">
           <li class="my-link endDay" @click="endDay">結束當日交易</li>
           <li class="nav-item dropdown">
-            <a class="my-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" :aria-expanded="dropDown" href="#">
+            <a class="my-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" :aria-expanded="false" href="#">
               存取紀錄
             </a>
             <div class="dropdown-menu">
