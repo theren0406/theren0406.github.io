@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-lg my-nav">
-      <router-link to="/" exact class="navbar-brand">Stock Trader</router-link>
+      <router-link to="/vue_stock" exact class="navbar-brand">Stock Trader</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"
         @click="collapse = !collapse">
         <span class="navbar-toggler-icon"></span>
@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse" :class="{show: collapse}" id="navbarContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <router-link to="/portfolio" class="nav-link" active-class="active">我的投資組合</router-link>
+            <router-link to="/vue_stock/portfolio" class="nav-link" active-class="active">我的投資組合</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/stocks" class="nav-link" active-class="active">購買期貨</router-link>
+            <router-link to="/vue_stock/stocks" class="nav-link" active-class="active">購買期貨</router-link>
           </li>
         </ul>
         <ul class="nav navbar-nav">

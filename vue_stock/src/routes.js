@@ -9,7 +9,7 @@ import Stocks from './components/stocks/stocks.vue';
 // };
 
 export const routes = [
-  { path: '/', component: Home },
-  { path: '/portfolio', component: Portfolio },
-  { path: '/stocks', component: Stocks }
+  { path: '/vue_stock', component: Home },
+  { path: '/vue_stock/portfolio', component: Portfolio },
+  { path: '/vue_stock/stocks', component: Stocks }
 ];

@@ -4,7 +4,7 @@
     <h6>點擊 <span>結束當日交易</span> 以更新期貨價格</h6>
     <h6>使用右上角功能 <span>存取</span> 當前投資組合 & 期貨價格 </h6>
     <p>目前持有基金 : {{ funds | currency }}</p>
-    <img src="/src/assets/stock.jpg" alt="stock">
+    <img src="vue_stock/src/assets/stock.jpg" alt="stock">
   </div>
 </template>
 

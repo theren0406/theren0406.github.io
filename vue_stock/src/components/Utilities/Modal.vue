@@ -5,7 +5,7 @@
         <div v-if="content === 'saveData'">
           <div class="modal-body saved">
             紀錄已儲存
-            <img src="/src/assets/ok.jpg" alt="ok" class="ok">
+            <img src="vue_stock/src/assets/ok.jpg" alt="ok" class="ok">
           </div>
         </div>
         <div v-else>
