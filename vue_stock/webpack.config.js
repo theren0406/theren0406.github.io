@@ -1,5 +1,4 @@
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
@@ -52,9 +51,5 @@ module.exports = {
   devtool: '#eval-source-map',
   plugins: [
     new VueLoaderPlugin()
-  ],
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
+  ]
 }
