@@ -7,7 +7,7 @@ import VideoDetail from './components/video_detail';
 
 // import '../style/style.scss';
 
-const API_KEY = 'AIzaSyA5br_ubQSOfDDGen0xVtR0AmBGYL8VK40';
+const API_KEY = 'AIzaSyANo_LkU_EVFT9u2bzR3XnrfE9KXLp_NNc';
 
 const App = () => {
 	const [videos, setVideos] = useState([])
