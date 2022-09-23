@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { FETCH_POST, FETCH_POSTS, DELETE_POST } from '../actions/index';
 
 const initState = {
-  data: [],
+  // data: [],
   error: false
 }
 

@@ -225,3 +225,10 @@ div.invalid-feedback {
 	transform: scale(0.6);
 	opacity: 0.4; 
 }
+.hint {
+	text-align: center;
+	font-size: 1.5rem;
+	margin-top: 200px;
+	color: var(--main-word);
+	font-weight: bold;
+}

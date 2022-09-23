@@ -32,8 +32,11 @@ class PostsIndex extends Component {
 					</Link>
       	</div>
       	<h3 className="title">圖書列表</h3>
-				{_.isEmpty(this.props.posts) ? 
+				{_.isUndefined(this.props.posts) ?
 				<div className="loader"></div> :
+
+				_.isEmpty(this.props.posts) ? 
+				<p className="hint">尚未新增圖書</p> :
       	<ul>
       		{this.renderPosts()}
       	</ul>}
