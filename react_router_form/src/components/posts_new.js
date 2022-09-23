@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
@@ -32,6 +32,7 @@ class PostsNew extends Component {
 		// console.log(values);
 		// make a callback to wait for the post to be created
 		document.querySelector('#newLoader').style.display = 'block';
+		document.querySelector('form').style.display = 'none';
 		this.props.createPost(values, () => {
 			this.props.history.push('/');
 		});
@@ -42,8 +43,9 @@ class PostsNew extends Component {
 		const { handleSubmit } = this.props;
 
 		return (
+			<Fragment>
+			<div className="loader" id="newLoader" style={{display: 'none'}}></div>
 			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-				<div className="loader" id="newLoader" style={{display: 'none'}}></div>
 				<Field 
 					label="標題"
 					// the name property is a piece of state
@@ -68,6 +70,7 @@ class PostsNew extends Component {
 					<button type="submit" className="btn btn-custom">新增</button>
 				</div>
 			</form>
+			</Fragment>
 		);
 	}
 }
