@@ -4,7 +4,7 @@
   </div>
   <div v-else class="empty">
     目前未持有任何期貨
-    <img src="src/assets/sorry.jpg" alt="No Stock in the portfolio">
+    <img src="/src/assets/sorry.jpg" alt="No Stock in the portfolio">
   </div>
 </template>
 
