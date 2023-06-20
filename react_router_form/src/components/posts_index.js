@@ -11,6 +11,10 @@ class PostsIndex extends Component {
 	}
 	
 	renderPosts() {
+		const posts = this.props.posts;
+		for (let key of Object.keys(posts)) {
+			posts[key].id = key
+		}
 		return _.map(this.props.posts, (post) => {
 			return (
 				<li 

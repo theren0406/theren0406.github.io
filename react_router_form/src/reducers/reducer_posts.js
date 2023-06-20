@@ -14,7 +14,7 @@ export default function(state = initState, action) {
       if (action.error) {
         return { ...state, error: true}
       } else {
-        return { ...state, post: [action.payload.data]}
+        return { ...state, post: action.payload.data}
       }
 
 		case FETCH_POSTS:

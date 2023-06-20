@@ -93,7 +93,7 @@ function mapStateToProps({ data }, ownProps) {
 	if (!_.isUndefined(data.posts)) {
 		return {
 			...data,
-			post: _.find(data.posts, { id: parseInt(ownProps.match.params.id) }) 
+			post: data.posts[ownProps.match.params.id]
 		}
 	}
 	return data;
