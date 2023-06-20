@@ -5,11 +5,10 @@ export const FETCH_POSTS = 'fetch_posts';
 export const CREATE_POST = 'create_post';
 export const DELETE_POST = 'delete_post';
 
-const ROOT_URL = 'https://reduxblog.herokuapp.com/api';
-const API_KEY = '?key=theren0406';
+axios.defaults.baseURL = 'https://react-form-4e97a-default-rtdb.firebaseio.com/';
 
 export function fetchPosts() {
-	const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
+	const request = axios.get('/data.json');
 
 	return {
 		type: FETCH_POSTS,
@@ -18,7 +17,7 @@ export function fetchPosts() {
 }
 
 export function fetchPost(id) {
-	const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
+	const request = axios.get(`/data/${id}.json`);
 	
 	return {
 		type: FETCH_POST,
@@ -27,7 +26,7 @@ export function fetchPost(id) {
 }
 
 export function createPost(values, callback) {
-	const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
+	const request = axios.post('/data.json', values)
 		.then(() => callback());
 	
 	return {
@@ -37,7 +36,7 @@ export function createPost(values, callback) {
 }
 
 export function deletePost(id, callback) {
-	const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+	const request = axios.delete(`data/${id}.json`)
 		.then(() => callback());
 	
 	return {
