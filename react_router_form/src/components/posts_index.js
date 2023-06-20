@@ -46,7 +46,7 @@ class PostsIndex extends Component {
 }
 
 function mapStateToProps({ data }) {
-	return { posts: data.data };
+	return { posts: data.posts };
 }
 
 function MapDispatchToProps(dispatch) {

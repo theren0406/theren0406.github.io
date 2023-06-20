@@ -90,10 +90,10 @@ class PostsShow extends Component {
 
 function mapStateToProps({ data }, ownProps) {
 
-	if (!_.isUndefined(data.data)) {
+	if (!_.isUndefined(data.posts)) {
 		return {
 			...data,
-			post: _.find(data.data, { id: parseInt(ownProps.match.params.id) }) 
+			post: _.find(data.posts, { id: parseInt(ownProps.match.params.id) }) 
 		}
 	}
 	return data;
