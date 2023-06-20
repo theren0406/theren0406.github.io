@@ -15,7 +15,7 @@ class PostsShow extends Component {
 
 	componentDidMount() {
 		// match the params from route :id
-			this.onFetchPost(this.props.match.params.id);
+		this.onFetchPost(this.props.match.params.id);
 	}
 
 	onFetchPost(id) {
@@ -63,42 +63,40 @@ class PostsShow extends Component {
 
 				{ /* Modal */ }
 				<div className="modal fade" id="delete-modal" tabIndex="-1" role="dialog">
-  				<div className="modal-dialog modal-sm">
-    				<div className="modal-content">
-    					<div className="modal-header">
-        				<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          				<span aria-hidden="true">&times;</span>
-        				</button>
-      				</div>
-      				<div className="modal-body">是否確定刪除此筆圖書 ?</div>
-      				<div className="modal-footer">
-      					<button className="btn btn-danger" data-dismiss="modal">取消</button>
-      					<button
-      						className="btn btn-custom btn-confirm"
-      						data-dismiss="modal"
-      						onClick={this.onDeleteClick.bind(this)}
-      					>確定
-      					</button>
-      				</div>
-   					</div>
-  				</div>
+					<div className="modal-dialog modal-sm">
+						<div className="modal-content">
+							<div className="modal-header">
+								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div className="modal-body">是否確定刪除此筆圖書 ?</div>
+							<div className="modal-footer">
+								<button className="btn btn-danger" data-dismiss="modal">取消</button>
+								<button
+									className="btn btn-custom btn-confirm"
+									data-dismiss="modal"
+									onClick={this.onDeleteClick.bind(this)}
+								>確定
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		);
 	}
 }
 
-function mapStateToProps({ posts }, ownProps) {
-	const props = { error: posts.error };
+function mapStateToProps({ data }, ownProps) {
 
-	if (_.isEmpty(posts.data)) {
-		return props;
-	} else {
-		return { 
-			...props,
-			post: _.find(posts.data, { id: parseInt(ownProps.match.params.id) }) 
-		};
+	if (!_.isUndefined(data.data)) {
+		return {
+			...data,
+			post: _.find(data.data, { id: parseInt(ownProps.match.params.id) }) 
+		}
 	}
+	return data;
 }
 
 export default connect(mapStateToProps, { fetchPost, deletePost })(PostsShow);
